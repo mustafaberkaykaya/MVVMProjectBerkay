@@ -210,6 +210,7 @@
 				6ABF3E4E27B3FED50014D355 /* Frameworks */,
 				6ABF3E4F27B3FED50014D355 /* Resources */,
 				6A23F8EF27B501AB0082079E /* Embed Frameworks */,
+				CEF95878D4DB06506995AA08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +248,7 @@
 				6ABF3E6E27B3FED90014D355 /* Sources */,
 				6ABF3E6F27B3FED90014D355 /* Frameworks */,
 				6ABF3E7027B3FED90014D355 /* Resources */,
+				72AF5BB7503262F0900D743E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +413,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+		};
+		72AF5BB7503262F0900D743E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEF95878D4DB06506995AA08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
