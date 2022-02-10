@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A23F85227B4FF5D0082079E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A23F85127B4FF5D0082079E /* LaunchScreen.storyboard */; };
 		6ABF3E5527B3FED50014D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5427B3FED50014D355 /* AppDelegate.swift */; };
 		6ABF3E5927B3FED50014D355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5827B3FED50014D355 /* ViewController.swift */; };
 		6ABF3E5E27B3FED80014D355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5D27B3FED80014D355 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		40B22DD38680BF9BD0E9822E /* Pods-NoteBerkayMvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm.debug.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm.debug.xcconfig"; sourceTree = "<group>"; };
 		5E33A7A2B6EA93BD6C3514F8 /* Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.release.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5F273B7F994D55F756B56291 /* Pods_NoteBerkayMvvmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBerkayMvvmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A23F85127B4FF5D0082079E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ABF3E5127B3FED50014D355 /* NoteBerkayMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBerkayMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABF3E5427B3FED50014D355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ABF3E5827B3FED50014D355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 		6ABF3E7227B3FED90014D355 /* NoteBerkayMvvmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteBerkayMvvmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABF3E7627B3FED90014D355 /* NoteBerkayMvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBerkayMvvmUITests.swift; sourceTree = "<group>"; };
 		6ABF3E7827B3FED90014D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ABF3E9C27B40ECC0014D355 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDAC545CD9EFD47199BD1EC /* Pods-NoteBerkayMvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm.release.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm.release.xcconfig"; sourceTree = "<group>"; };
 		92E3C1C2FA426F7A569082C2 /* Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1683BA3DB1B7F397C66EB53 /* Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +129,7 @@
 				6ABF3E5427B3FED50014D355 /* AppDelegate.swift */,
 				6ABF3E5827B3FED50014D355 /* ViewController.swift */,
 				6ABF3E5D27B3FED80014D355 /* Assets.xcassets */,
+				6A23F85127B4FF5D0082079E /* LaunchScreen.storyboard */,
 				6ABF3E6227B3FED80014D355 /* Info.plist */,
 			);
 			path = NoteBerkayMvvm;
@@ -152,6 +156,7 @@
 		D97D737DA24568F212E9C739 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6ABF3E9C27B40ECC0014D355 /* UIComponents.framework */,
 				DDA0D8178EFDE9A84C9B1142 /* Pods_NoteBerkayMvvm.framework */,
 				A1683BA3DB1B7F397C66EB53 /* Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework */,
 				5F273B7F994D55F756B56291 /* Pods_NoteBerkayMvvmTests.framework */,
@@ -230,6 +235,7 @@
 				TargetAttributes = {
 					6ABF3E5027B3FED50014D355 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					6ABF3E6627B3FED80014D355 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -267,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ABF3E5E27B3FED80014D355 /* Assets.xcassets in Resources */,
+				6A23F85227B4FF5D0082079E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2Z6Q6SV9B;
 				INFOPLIST_FILE = NoteBerkayMvvm/Info.plist;
@@ -547,6 +555,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbk.NoteBerkayMvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2Z6Q6SV9B;
 				INFOPLIST_FILE = NoteBerkayMvvm/Info.plist;
@@ -568,6 +579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbk.NoteBerkayMvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
