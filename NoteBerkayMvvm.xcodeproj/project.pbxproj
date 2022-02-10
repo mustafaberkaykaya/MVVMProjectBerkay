@@ -65,6 +65,7 @@
 		6A23F8EC27B501AB0082079E /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A23F8F027B501AF0082079E /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A23F8F327B501CA0082079E /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A23F8F627B502020082079E /* NoteBerkayMvvm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoteBerkayMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
 		6ABF3E5127B3FED50014D355 /* NoteBerkayMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBerkayMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABF3E5427B3FED50014D355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ABF3E5827B3FED50014D355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				6ABF3E5D27B3FED80014D355 /* Assets.xcassets */,
 				6A23F85127B4FF5D0082079E /* LaunchScreen.storyboard */,
 				6ABF3E6227B3FED80014D355 /* Info.plist */,
+				6A23F8F627B502020082079E /* NoteBerkayMvvm-Bridging-Header.h */,
 			);
 			path = NoteBerkayMvvm;
 			sourceTree = "<group>";
@@ -587,7 +589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbk.NoteBerkayMvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NoteBerkayMvvm/NoteBerkayMvvm-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,7 +613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mbk.NoteBerkayMvvm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "NoteBerkayMvvm/NoteBerkayMvvm-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
