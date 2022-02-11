@@ -18,13 +18,19 @@ public typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 public enum FontFamily {
+  public enum JosefinSans {
+    public static let bold = FontConvertible(name: "JosefinSans-Bold", family: "Josefin Sans", path: "JosefinSans-Bold.ttf")
+    public static let regular = FontConvertible(name: "JosefinSans-Regular", family: "Josefin Sans", path: "JosefinSans-Regular.ttf")
+    public static let semiBold = FontConvertible(name: "JosefinSans-SemiBold", family: "Josefin Sans", path: "JosefinSans-SemiBold.ttf")
+    public static let all: [FontConvertible] = [bold, regular, semiBold]
+  }
   public enum Nunito {
     public static let bold = FontConvertible(name: "Nunito-Bold", family: "Nunito", path: "Nunito-Bold.ttf")
     public static let extraBold = FontConvertible(name: "Nunito-ExtraBold", family: "Nunito", path: "Nunito-ExtraBold.ttf")
     public static let semiBold = FontConvertible(name: "Nunito-SemiBold", family: "Nunito", path: "Nunito-SemiBold.ttf")
     public static let all: [FontConvertible] = [bold, extraBold, semiBold]
   }
-  public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
+  public static let allCustomFonts: [FontConvertible] = [JosefinSans.all, Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
