@@ -1,9 +1,8 @@
 //
 //  BaseViewController.swift
-//  Airalo
+//  NoteBerkayMvvm
 //
-//  Created by Alihan Aktay on 8.10.2020.
-//  Copyright © 2021 Airalo. All rights reserved.
+//  Created by Mustafa Berkay Kaya on 10.02.2022.
 //
 
 import UIKit

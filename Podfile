@@ -10,6 +10,11 @@ $Alamofire = pod 'Alamofire', '~> 5.5'
 # Pods for CodeQuality
 $SwiftLint = pod 'SwiftLint', '~> 0.46'
 
+# Pods for Helper
+$SwiftEntryKit = pod 'SwiftEntryKit', '~> 2.0'
+$SwiftGen = pod 'SwiftGen', '~> 6.5'
+$IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift', '~> 6.5'
+
 # Pods for UI
 $MobilliumBuilders = pod 'MobilliumBuilders','~> 1.4'
 $TinyConstrain = pod 'TinyConstraints', '~> 4.0'
@@ -27,6 +32,7 @@ target 'NoteBerkayMvvm' do
   $SwiftLint
   $MobilliumBuilders
   $TinyConstrain
+  $IQKeyboardManagerSwift
 
   target 'NoteBerkayMvvmTests' do
     inherit! :search_paths
@@ -71,6 +77,10 @@ target 'UIComponents' do
   project 'UIComponents/UIComponents.xcodeproj'
   
   # Pods for UIComponents
+  $SwiftGen
+  $SwiftEntryKit
+  $TinyConstrain
+  $SwiftLint
   
   target 'UIComponentsTests' do
     inherit! :search_paths
