@@ -11,7 +11,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
 }
