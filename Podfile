@@ -52,6 +52,7 @@ target 'DataProvider' do
   # Pods for DataProvider
   $Alamofire
   
+  
   target 'DataProviderTests' do
     inherit! :search_paths
     # Pods for testing
