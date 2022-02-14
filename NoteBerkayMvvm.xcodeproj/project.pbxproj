@@ -28,6 +28,9 @@
 		6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F91C27B540E20082079E /* LoginViewModel.swift */; };
 		6A23F92127B540F70082079E /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92027B540F70082079E /* LoginRoute.swift */; };
 		6A23F92327B5454C0082079E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92227B5454C0082079E /* AppRouter.swift */; };
+		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
+		6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */; };
+		6AB6C3D027BA8D9E00286238 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CF27BA8D9E00286238 /* DataProvider.swift */; };
 		6ABF3E5527B3FED50014D355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5427B3FED50014D355 /* AppDelegate.swift */; };
 		6ABF3E5E27B3FED80014D355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5D27B3FED80014D355 /* Assets.xcassets */; };
 		6ABF3E6C27B3FED90014D355 /* NoteBerkayMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E6B27B3FED90014D355 /* NoteBerkayMvvmTests.swift */; };
@@ -93,6 +96,9 @@
 		6A23F91C27B540E20082079E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6A23F92027B540F70082079E /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		6A23F92227B5454C0082079E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
+		6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterceptor.swift; sourceTree = "<group>"; };
+		6AB6C3CF27BA8D9E00286238 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		6ABF3E5127B3FED50014D355 /* NoteBerkayMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBerkayMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ABF3E5427B3FED50014D355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ABF3E5D27B3FED80014D355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,6 +271,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		6AB6C3CA27BA8CF300286238 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */,
+				6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */,
+				6AB6C3CF27BA8D9E00286238 /* DataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
 		6ABF3E4827B3FED50014D355 = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +306,7 @@
 		6ABF3E5327B3FED50014D355 /* NoteBerkayMvvm */ = {
 			isa = PBXGroup;
 			children = (
+				6AB6C3CA27BA8CF300286238 /* DataProvider */,
 				6A23F8F827B525BE0082079E /* AppDelegate */,
 				6A23F8F927B52EB10082079E /* Configurations */,
 				6A23F8FB27B52F170082079E /* Routing */,
@@ -592,8 +609,11 @@
 			files = (
 				6A23F91E27B540E20082079E /* LoginViewController.swift in Sources */,
 				6A23F90727B532A50082079E /* ModalTransition.swift in Sources */,
+				6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */,
 				6A23F90427B532990082079E /* PushTransition.swift in Sources */,
 				6A23F92127B540F70082079E /* LoginRoute.swift in Sources */,
+				6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */,
+				6AB6C3D027BA8D9E00286238 /* DataProvider.swift in Sources */,
 				6A23F90027B530030082079E /* Router.swift in Sources */,
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
