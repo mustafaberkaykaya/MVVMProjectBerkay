@@ -13,7 +13,7 @@ final class ApiLogger: EventMonitor {
     
     static let shared = ApiLogger()
     
-    let queue = DispatchQueue(label: "com.mobillium.notesalihmvvm.networklogger")
+    let queue = DispatchQueue(label: "com.mobillium.noteberkaymvvm.networklogger")
     
     func request(_ request: Request, didCreateURLRequest urlRequest: URLRequest) {
         print("---> Request Created <---")
