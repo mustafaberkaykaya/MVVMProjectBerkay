@@ -35,7 +35,17 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
 //        button.leadingToSuperview().constant = 25
 //        button.trailingToSuperview().constant = -25
 //        button.centerYToSuperview()
+        
+        let footer = FooterView()
+        footer.leftLabelText = "New User?"
+        footer.rightButtonTitle = " Sign up now"
+        view.addSubview(footer)
+        footer.bottomToSuperview(usingSafeArea:true).constant = -34
+        footer.leadingToSuperview().constant = 109
+        footer.trailingToSuperview().constant = -108
+        footer.isUserInteractionEnabled = true
+        
+        
 
-    
-    }
+    } 
 }
