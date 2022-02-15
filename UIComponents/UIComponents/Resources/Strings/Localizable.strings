@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by Mustafa Berkay Kaya on 11.02.2022.
+  
+*/
+// MARK: - Login
+"Login.title" = "Login";
