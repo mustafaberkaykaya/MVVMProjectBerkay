@@ -12,6 +12,18 @@ import Foundation
 public enum L10n {
 
   public enum Login {
+    /// Login or sign up to continue using our app.
+    public static let description = L10n.tr("Localizable", "Login.description")
+    /// New User?
+    public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")
+    ///  Sign up now?
+    public static let footerRight = L10n.tr("Localizable", "Login.footerRight")
+    /// Forgot Password?
+    public static let forgot = L10n.tr("Localizable", "Login.forgot")
+    /// E-mail adress
+    public static let placeholderMail = L10n.tr("Localizable", "Login.placeholderMail")
+    /// Password
+    public static let placeholderPass = L10n.tr("Localizable", "Login.placeholderPass")
     /// Login
     public static let title = L10n.tr("Localizable", "Login.title")
   }
