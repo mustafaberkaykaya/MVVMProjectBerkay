@@ -38,6 +38,10 @@ public extension UIColor {
       return Asset.Colors.appSilver.color
   }
 
+  static var appWhite: UIColor {
+      return Asset.Colors.appWhite.color
+  }
+
   static var appYellow: UIColor {
       return Asset.Colors.appYellow.color
   }

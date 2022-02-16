@@ -30,6 +30,7 @@ public enum Asset {
     public static let appLightGray = ColorAsset(name: "appLightGray")
     public static let appRed = ColorAsset(name: "appRed")
     public static let appSilver = ColorAsset(name: "appSilver")
+    public static let appWhite = ColorAsset(name: "appWhite")
     public static let appYellow = ColorAsset(name: "appYellow")
     public static let appZircon = ColorAsset(name: "appZircon")
   }
