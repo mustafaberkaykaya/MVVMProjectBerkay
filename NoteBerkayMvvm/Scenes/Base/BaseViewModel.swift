@@ -12,7 +12,7 @@ protocol BaseViewModelDataSource: AnyObject {
 }
 
 protocol BaseViewModelEventSource: AnyObject {
-
+   
 }
 
 protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {
