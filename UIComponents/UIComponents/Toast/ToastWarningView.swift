@@ -29,7 +29,7 @@ public class ToastWarningView: UIView {
     // swiftlint:enable fatal_error unavailable_function
 }
 
-extension ToastWarningView{
+extension ToastWarningView {
     private func configureContents() {
         addSubview(label)
         label.edgesToSuperview(insets: .init(top: 13, left: 13, bottom: 13, right: 13))

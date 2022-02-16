@@ -12,7 +12,8 @@ protocol BaseViewModelDataSource: AnyObject {
 }
 
 protocol BaseViewModelEventSource: AnyObject {
-   
+    var showWarningToast: StringClosure? { get set }
+    var showSuccessToast: StringClosure? { get set }
 }
 
 protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {
@@ -20,11 +21,17 @@ protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSourc
 }
 
 class BaseViewModel<R: Router>: BaseViewModelProtocol {
+   
+    let dataProvider: DataProviderProtocol
+    
+    var showSuccessToast: StringClosure?
+    var showWarningToast: StringClosure?
     
     let router: R
 
-    init(router: R) {
+    init(router: R, dataProvider: DataProviderProtocol = apiDataProvider) {
         self.router = router
+        self.dataProvider = dataProvider
     }
     
     func viewDidLoad() {}
