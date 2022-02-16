@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
+class BaseViewController<V: BaseViewModelProtocol>: UIViewController, LoadingProtocol, ActivityIndicatorProtocol {
     var viewModel: V
     
     init(viewModel: V) {
@@ -43,12 +43,28 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
 
 extension BaseViewController {
     private func subscribeViewModel() {
-        viewModel.showWarningToast = { text in
+    viewModel.showWarningToast = { text in
             ToastPresenter.showWarningToast(text: text)
-        }
-        
-        viewModel.showSuccessToast = { text in
-            ToastPresenter.showSuccessToast(text: text)
-        }
     }
+        
+    viewModel.showSuccessToast = { text in
+            ToastPresenter.showSuccessToast(text: text)
+    }
+    
+    viewModel.showActivityIndicatorView = { [weak self] in
+            self?.hideActivityIndicator()
+    }
+        
+    viewModel.hideActivityIndicatorView = { [weak self] in
+                    self?.hideActivityIndicator()
+    }
+        
+    viewModel.showLoading = { [weak self] in
+                    self?.presentLoading()
+    }
+        
+    viewModel.hideLoading = { [weak self] in
+                    self?.dismissLoading()
+    }
+  }
 }
