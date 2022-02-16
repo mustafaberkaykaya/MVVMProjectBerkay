@@ -12,10 +12,12 @@ import MobilliumBuilders
 public class FooterView: UIView {
     private let leftLabel = UILabelBuilder()
         .font(.font(.josefinSansRegular, size: 15))
+        .textColor(.appDarkGray)
         .textAlignment(.center)
         .build()
     private let rightButton = UIButtonBuilder()
         .titleFont(.font(.josefinSansRegular, size: 15))
+        .titleColor(.appBlue)
         .build()
     private let stackView = UIStackViewBuilder()
         .axis(.horizontal)

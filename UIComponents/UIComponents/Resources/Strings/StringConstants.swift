@@ -16,7 +16,7 @@ public enum L10n {
     public static let description = L10n.tr("Localizable", "Login.description")
     /// New User?
     public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")
-    ///  Sign up now?
+    ///  Sign up now
     public static let footerRight = L10n.tr("Localizable", "Login.footerRight")
     /// Forgot Password?
     public static let forgot = L10n.tr("Localizable", "Login.forgot")
