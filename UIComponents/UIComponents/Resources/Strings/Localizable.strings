@@ -7,3 +7,9 @@
 */
 // MARK: - Login
 "Login.title" = "Login";
+"Login.description" = "Login or sign up to continue using our app.";
+"Login.placeholderMail" = "E-mail adress";
+"Login.placeholderPass" = "Password";
+"Login.forgot" = "Forgot Password?";
+"Login.footerLeft" = "New User?";
+"Login.footerRight" = " Sign up now";

@@ -82,6 +82,7 @@ target 'UIComponents' do
   $SwiftEntryKit
   $TinyConstrain
   $SwiftLint
+  $MobilliumBuilders
   
   target 'UIComponentsTests' do
     inherit! :search_paths
