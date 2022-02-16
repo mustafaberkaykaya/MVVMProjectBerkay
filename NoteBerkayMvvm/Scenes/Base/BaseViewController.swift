@@ -28,6 +28,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        subscribeViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,4 +39,16 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController {
         super.viewDidDisappear(animated)
     }
         
+}
+
+extension BaseViewController {
+    private func subscribeViewModel() {
+        viewModel.showWarningToast = { text in
+            ToastPresenter.showWarningToast(text: text)
+        }
+        
+        viewModel.showSuccessToast = { text in
+            ToastPresenter.showSuccessToast(text: text)
+        }
+    }
 }

@@ -6,6 +6,10 @@ import UIKit
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public extension UIColor {
 
+  static var appBlack: UIColor {
+      return Asset.Colors.appBlack.color
+  }
+
   static var appBlue: UIColor {
       return Asset.Colors.appBlue.color
   }
@@ -32,6 +36,10 @@ public extension UIColor {
 
   static var appSilver: UIColor {
       return Asset.Colors.appSilver.color
+  }
+
+  static var appWhite: UIColor {
+      return Asset.Colors.appWhite.color
   }
 
   static var appYellow: UIColor {
