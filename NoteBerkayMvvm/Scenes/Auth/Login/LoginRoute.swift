@@ -17,7 +17,7 @@ extension LoginRoute where Self: RouterProtocol {
         let router = LoginRouter()
         let viewModel = LoginViewModel(router: router)
         let viewController = LoginViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = MainNavigationController(rootViewController: viewController)
         
         let transition = PlaceOnWindowTransition()
         router.viewController = viewController
