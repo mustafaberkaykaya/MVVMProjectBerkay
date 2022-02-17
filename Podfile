@@ -14,10 +14,12 @@ $SwiftLint = pod 'SwiftLint', '~> 0.46'
 $SwiftEntryKit = pod 'SwiftEntryKit', '~> 2.0'
 $SwiftGen = pod 'SwiftGen', '~> 6.5'
 $IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift', '~> 6.5'
+$Kingfisher = pod 'Kingfisher', '~> 6.3.1'
 
 # Pods for UI
 $MobilliumBuilders = pod 'MobilliumBuilders','~> 1.4'
 $TinyConstrain = pod 'TinyConstraints', '~> 4.0'
+
 
 
 
@@ -83,6 +85,7 @@ target 'UIComponents' do
   $TinyConstrain
   $SwiftLint
   $MobilliumBuilders
+  $Kingfisher
   
   target 'UIComponentsTests' do
     inherit! :search_paths

@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.5.0)
   - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (6.3.1)
   - MobilliumBuilders (1.4.0)
   - SwiftEntryKit (2.0.0)
   - SwiftGen (6.5.1)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.5)
   - IQKeyboardManagerSwift (~> 6.5)
+  - Kingfisher (~> 6.3.1)
   - MobilliumBuilders (~> 1.4)
   - SwiftEntryKit (~> 2.0)
   - SwiftGen (~> 6.5)
@@ -20,6 +22,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
+    - Kingfisher
     - MobilliumBuilders
     - SwiftEntryKit
     - SwiftGen
@@ -29,12 +32,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
   SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   SwiftLint: 6bc52a21f0fd44cab9aa2dc8e534fb9f5e3ec507
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 341004007c9acb56dc683bdf6734365cac8523c1
+PODFILE CHECKSUM: f17e363f2a4df222c59618afe8d1ee8723d339cb
 
 COCOAPODS: 1.11.2
