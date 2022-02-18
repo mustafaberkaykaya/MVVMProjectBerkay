@@ -73,7 +73,6 @@ extension FooterView {
     @objc
     private func rightButtonTapped(_ sender: UITapGestureRecognizer) {
         actionClousure?()
-        print("fff")
     }
 }
  

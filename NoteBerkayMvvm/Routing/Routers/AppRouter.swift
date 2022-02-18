@@ -25,5 +25,7 @@ final class AppRouter: Router, AppRouter.Routes {
     }
     
     func startApp() {
-        AppRouter.shared.pushRegister()       }
+        AppRouter.shared.placeOnWindowLogin()
+        
+    }
 }

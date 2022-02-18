@@ -18,7 +18,11 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .distribution(.fill)
         .build()
     private let textFieldEmail = AuthTextField()
-    private let textFieldPassword = AuthTextField()
+    private let textFieldPassword: AuthTextField = {
+        let textField = AuthTextField()
+        textField.isSecureTextEntry = true
+        return textField
+      }()
     private let forgotLabel = UILabelBuilder()
         .font(.font(.josefinSansRegular, size: 13))
         .textColor(.appEbonyClay)
@@ -30,6 +34,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
         addSubViews()
         configureContents()
+        
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
     } 
 }
 
@@ -82,25 +88,46 @@ extension LoginViewController {
         footer.height(15)
     }
 }
-// MARK: - Configure
+
+// MARK: - Configure & SetLocalize
 extension LoginViewController {
     private func configureContents() {
-        configureHeader()
-        configureTexts()
+        configureSignUp()
+        setLocalize()
     }
     
-    private func configureHeader() {
+    private func setLocalize() {
+        textFieldEmail.placeholder = L10n.Login.placeholderMail
+        textFieldPassword.placeholder = L10n.Login.placeholderPass
+       
+        forgotLabel.text = L10n.Login.forgot
+        button.buttonTitle = L10n.Login.title
+       
+        footer.leftLabelText = L10n.Login.footerLeft
+        footer.rightButtonTitle = L10n.Login.footerRight
+        textFieldPassword.isSecureTextEntry = true
+        
         headerView.titleText = L10n.Login.title
         headerView.descriptionText = L10n.Login.description
     }
     
-    private func configureTexts() {
-        textFieldEmail.placeholder = L10n.Login.placeholderMail
-        textFieldPassword.placeholder = L10n.Login.placeholderPass
-        forgotLabel.text = L10n.Login.forgot
-        button.buttonTitle = L10n.Login.title
-        footer.leftLabelText = L10n.Login.footerLeft
-        footer.rightButtonTitle = L10n.Login.footerRight
-        textFieldPassword.isSecureTextEntry = true
+    private func configureSignUp() {
+        footer.actionClousure = {
+            print("fddf")
+        }
+    }
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @objc
+    private func tappedLoginButton() {
+        viewModel.pushNotesScene()
+    }
+    
+    @objc
+    private func tappedforgotPassword() {
+        viewModel.pushPasswordResetScene()
     }
 }
