@@ -27,6 +27,25 @@ public enum L10n {
     /// Login
     public static let title = L10n.tr("Localizable", "Login.title")
   }
+
+  public enum Register {
+    /// Already have an account? 
+    public static let already = L10n.tr("Localizable", "Register.already")
+    /// Login or sign up to continue using our app.
+    public static let description = L10n.tr("Localizable", "Register.description")
+    /// E-mail address
+    public static let email = L10n.tr("Localizable", "Register.email")
+    /// Forgot Password?
+    public static let forgot = L10n.tr("Localizable", "Register.forgot")
+    /// Full Name
+    public static let fullName = L10n.tr("Localizable", "Register.fullName")
+    /// Password
+    public static let password = L10n.tr("Localizable", "Register.password")
+    /// Sign in now
+    public static let signIn = L10n.tr("Localizable", "Register.signIn")
+    /// Sign Up
+    public static let title = L10n.tr("Localizable", "Register.title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

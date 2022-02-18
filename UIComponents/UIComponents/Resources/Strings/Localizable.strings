@@ -13,3 +13,14 @@
 "Login.forgot" = "Forgot Password?";
 "Login.footerLeft" = "New User?";
 "Login.footerRight" = " Sign up now";
+
+// MARK: - Register
+
+"Register.title" = "Sign Up";
+"Register.description" = "Login or sign up to continue using our app.";
+"Register.fullName" = "Full Name";
+"Register.email" = "E-mail address";
+"Register.password" = "Password";
+"Register.forgot" = "Forgot Password?";
+"Register.already" = "Already have an account? ";
+"Register.signIn" = "Sign in now";
