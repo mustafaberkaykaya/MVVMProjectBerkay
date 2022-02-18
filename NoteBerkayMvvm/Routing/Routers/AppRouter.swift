@@ -9,7 +9,7 @@ import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = LoginRoute
+    typealias Routes = LoginRoute & RegisterRoute
     
     static let shared = AppRouter()
     
@@ -25,6 +25,5 @@ final class AppRouter: Router, AppRouter.Routes {
     }
     
     func startApp() {
-           AppRouter.shared.placeOnWindowLogin()
-       }
+        AppRouter.shared.pushRegister()       }
 }
