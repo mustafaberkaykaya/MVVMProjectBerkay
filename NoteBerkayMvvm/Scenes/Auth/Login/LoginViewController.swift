@@ -17,25 +17,20 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .alignment(.fill)
         .distribution(.fill)
         .build()
+    private let forgotButton = CustomButton()
     private let textFieldEmail = AuthTextField()
     private let textFieldPassword: AuthTextField = {
         let textField = AuthTextField()
         textField.isSecureTextEntry = true
         return textField
       }()
-    private let forgotLabel = UILabelBuilder()
-        .font(.font(.josefinSansRegular, size: 13))
-        .textColor(.appEbonyClay)
-        .build()
-    private let button = CustomButton()
+    private let loginButton = CustomButton()
     private let footer = FooterView()
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
         configureContents()
-        
-        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
     } 
 }
 
@@ -44,8 +39,8 @@ extension LoginViewController {
     private func addSubViews() {
         addHeader()
         addStackView()
-        addLabel()
-        addButton()
+        addForgotButton()
+        addLoginButton()
         addFooter()
     }
     
@@ -65,19 +60,24 @@ extension LoginViewController {
         stackView.addArrangedSubview(textFieldPassword)
     }
     
-    private func addLabel() {
-        view.addSubview(forgotLabel)
-        forgotLabel.trailingToSuperview().constant = -24
-        forgotLabel.topToBottom(of: stackView).constant = 13
+    private func addForgotButton() {
+        view.addSubview(forgotButton)
+        forgotButton.trailingToSuperview().constant = -24
+        forgotButton.topToBottom(of: stackView).constant = 13
+        forgotButton.backgroundColor = .white
+        forgotButton.titleLabel?.font = .font(.josefinSansRegular, size: 13)
+        forgotButton.titleColor = .appEbonyClay
+        forgotButton.height(13)
+        
     }
     
-    private func addButton() {
-        view.addSubview(button)
-        button.height(60)
-        button.leadingToSuperview().constant = 25
-        button.trailingToSuperview().constant = -25
-        button.topToBottom(of: forgotLabel).constant = 27
-        button.tintColor = .appBlue
+    private func addLoginButton() {
+        view.addSubview(loginButton)
+        loginButton.height(60)
+        loginButton.leadingToSuperview().constant = 25
+        loginButton.trailingToSuperview().constant = -25
+        loginButton.topToBottom(of: forgotButton).constant = 27
+        loginButton.tintColor = .appBlue
     }
     
     private func addFooter() {
@@ -94,14 +94,18 @@ extension LoginViewController {
     private func configureContents() {
         configureSignUp()
         setLocalize()
+        
+        loginButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
+        forgotButton.addTarget(self, action: #selector(tappedforgotPassword), for: .touchUpInside)
+        
     }
     
     private func setLocalize() {
         textFieldEmail.placeholder = L10n.Login.placeholderMail
         textFieldPassword.placeholder = L10n.Login.placeholderPass
        
-        forgotLabel.text = L10n.Login.forgot
-        button.buttonTitle = L10n.Login.title
+        forgotButton.buttonTitle = L10n.Login.forgot
+        loginButton.buttonTitle = L10n.Login.title
        
         footer.leftLabelText = L10n.Login.footerLeft
         footer.rightButtonTitle = L10n.Login.footerRight
@@ -112,8 +116,8 @@ extension LoginViewController {
     }
     
     private func configureSignUp() {
-        footer.actionClousure = {
-            print("fddf")
+        footer.actionClousure = { [weak self] in
+            self?.viewModel.pushRegisterScene()
         }
     }
 }
@@ -129,5 +133,10 @@ extension LoginViewController {
     @objc
     private func tappedforgotPassword() {
         viewModel.pushPasswordResetScene()
+    }
+    
+    @objc
+    private func tappedSignUpButton() {
+        viewModel.pushRegisterScene()
     }
 }

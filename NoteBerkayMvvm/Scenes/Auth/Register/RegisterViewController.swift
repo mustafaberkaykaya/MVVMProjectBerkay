@@ -13,12 +13,10 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private let scrollView = UIScrollViewBuilder().build()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
     }
-    
 }
 // MARK: - UILayout
 extension RegisterViewController {
@@ -26,6 +24,5 @@ extension RegisterViewController {
         addScrollView()
     }
     private func addScrollView() {
-        
     }
 }
