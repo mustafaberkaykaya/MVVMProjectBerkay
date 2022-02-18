@@ -29,5 +29,6 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     
     func pushRegisterScene() {
         print("Go Register Scene")
+        router.pushRegister()
     }
 }

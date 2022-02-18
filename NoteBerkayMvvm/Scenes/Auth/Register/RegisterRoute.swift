@@ -15,12 +15,11 @@ extension RegisterRoute where Self: RouterProtocol {
         let router = RegisterRouter()
         let viewModel = RegisterViewModel(router: router)
         let viewController = RegisterViewController(viewModel: viewModel)
-        let navigationController = MainNavigationController(rootViewController: viewController)
         
-        let transition = PlaceOnWindowTransition()
+        let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         
-        open(navigationController, transition: transition)
+        open(viewController, transition: transition)
     }
 }
