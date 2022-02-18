@@ -109,8 +109,7 @@ extension LoginViewController {
        
         footer.leftLabelText = L10n.Login.footerLeft
         footer.rightButtonTitle = L10n.Login.footerRight
-        textFieldPassword.isSecureTextEntry = true
-        
+            
         headerView.titleText = L10n.Login.title
         headerView.descriptionText = L10n.Login.description
     }

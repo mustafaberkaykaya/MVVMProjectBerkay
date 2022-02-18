@@ -27,15 +27,16 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
            return textField
     }()
     private let forgotButton = CustomButton()
-    private let loginButton = CustomButton()
+    private let signUpButton = CustomButton()
     private let footer = FooterView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
-        setLocalize()
+        configureContents()
     }
 }
+
 // MARK: - UILayout
 extension RegisterViewController {
     private func addSubViews() {
@@ -44,7 +45,7 @@ extension RegisterViewController {
         addHeaderView()
         addTextFieldStackView()
         addForgotButton()
-        addLoginButton()
+        addSignUpButton()
         addFooterView()
     }
     
@@ -57,7 +58,6 @@ extension RegisterViewController {
         scrollView.addSubview(contentView)
         contentView.edgesToSuperview()
         contentView.widthToSuperview()
-        contentView.backgroundColor = .red
     }
     
     private func addHeaderView() {
@@ -88,13 +88,14 @@ extension RegisterViewController {
         forgotButton.height(13)
     }
     
-    private func  addLoginButton() {
-        contentView.addSubview(loginButton)
-        loginButton.height(60)
-        loginButton.leadingToSuperview().constant = 25
-        loginButton.trailingToSuperview().constant = -25
-        loginButton.topToBottom(of: forgotButton).constant = 27
-        loginButton.tintColor = .appBlue
+    private func  addSignUpButton() {
+        contentView.addSubview(signUpButton)
+        signUpButton.leadingToSuperview().constant = 25
+        signUpButton.trailingToSuperview().constant = -25
+        signUpButton.topToBottom(of: forgotButton).constant = 27
+        signUpButton.bottomToSuperview().constant = -8
+        signUpButton.tintColor = .appBlue
+        signUpButton.height(60)
     }
     
     private func  addFooterView() {
@@ -107,18 +108,46 @@ extension RegisterViewController {
 }
 // MARK: - Configure & SetLocalize
 extension RegisterViewController {
+    private func configureContents() {
+        setLocalize()
+        
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        forgotButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
+        footer.actionClousure = {
+            self.viewModel.pushLoginScene()
+        }
+    }
+    
     private func setLocalize() {
         headerView.titleText = L10n.Register.title
         headerView.descriptionText = L10n.Register.description
         
         emailTextField.placeholder = L10n.Register.email
         fullNameTextField.placeholder = L10n.Register.fullName
-        passwordTextField.placeholder =  L10n.Register.password
+        passwordTextField.placeholder = L10n.Register.password
         
         forgotButton.buttonTitle = L10n.Register.forgot
-        loginButton.buttonTitle = L10n.Register.title
+        signUpButton.buttonTitle = L10n.Register.title
         
         footer.leftLabelText = L10n.Register.already
         footer.rightButtonTitle = L10n.Register.signIn
+    }
+}
+
+// MARK: - Actions
+extension RegisterViewController {
+    @objc
+    private func signUpButtonTapped() {
+        viewModel.pushNotesScene()
+    }
+    
+    @objc
+    private func forgotPasswordTapped() {
+        viewModel.pushPasswordResetScene()
+    }
+    
+    @objc
+    private func signInButtonTapped() {
+        viewModel.pushLoginScene()
     }
 }
