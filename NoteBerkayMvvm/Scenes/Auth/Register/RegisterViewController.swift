@@ -51,7 +51,7 @@ extension RegisterViewController {
     
     private func addScrollView() {
         view.addSubview(scrollView)
-        scrollView.edgesToSuperview()
+        scrollView.edgesToSuperview(excluding: .bottom)
     }
     
     private func addContentView() {
@@ -103,6 +103,7 @@ extension RegisterViewController {
         footer.leadingToSuperview().constant = 5
         footer.trailingToSuperview().constant = -5
         footer.bottomToSuperview(usingSafeArea: true).constant = -34
+        footer.topToBottom(of: scrollView).constant = 5
         footer.height(15)
     }
 }

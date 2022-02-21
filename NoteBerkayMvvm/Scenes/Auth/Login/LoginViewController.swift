@@ -26,7 +26,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
       }()
     private let loginButton = CustomButton()
     private let footer = FooterView()
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
@@ -97,7 +97,6 @@ extension LoginViewController {
         
         loginButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         forgotButton.addTarget(self, action: #selector(tappedforgotPassword), for: .touchUpInside)
-        
     }
     
     private func setLocalize() {
