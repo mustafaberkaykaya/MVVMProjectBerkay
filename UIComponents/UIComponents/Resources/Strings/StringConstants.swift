@@ -31,6 +31,8 @@ public enum L10n {
   public enum Register {
     /// Already have an account? 
     public static let already = L10n.tr("Localizable", "Register.already")
+    /// Sign in now
+    public static let amber = L10n.tr("Localizable", "Register.amber")
     /// Login or sign up to continue using our app.
     public static let description = L10n.tr("Localizable", "Register.description")
     /// E-mail address

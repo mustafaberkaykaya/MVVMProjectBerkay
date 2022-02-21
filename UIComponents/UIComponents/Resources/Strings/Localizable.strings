@@ -15,7 +15,6 @@
 "Login.footerRight" = " Sign up now";
 
 // MARK: - Register
-
 "Register.title" = "Sign Up";
 "Register.description" = "Login or sign up to continue using our app.";
 "Register.fullName" = "Full Name";

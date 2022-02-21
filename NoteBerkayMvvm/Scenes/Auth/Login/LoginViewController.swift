@@ -125,7 +125,7 @@ extension LoginViewController {
     
     @objc
     private func tappedLoginButton() {
-        viewModel.pushNotesScene()
+        viewModel.sendLoginRequest(email: textFieldEmail.text!, password: textFieldPassword.text!)
     }
     
     @objc
