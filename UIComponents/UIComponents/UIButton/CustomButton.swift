@@ -15,8 +15,14 @@ public class CustomButton: UIButton {
         }
     }
     
+    public var titleColor: UIColor? {
+        didSet {
+            setTitleColor(titleColor, for: .normal)
+        }
+    }
+    
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: frame) 
         configureContents()
     }
     // swiftlint:disable all

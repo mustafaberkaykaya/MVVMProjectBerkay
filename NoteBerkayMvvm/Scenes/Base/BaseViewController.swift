@@ -29,6 +29,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, LoadingPro
         super.viewDidLoad()
         view.backgroundColor = .white
         subscribeViewModel()
+        configureContents()        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,4 +68,10 @@ extension BaseViewController {
                     self?.dismissLoading()
     }
   }
+}
+extension BaseViewController {
+    private func configureContents() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
 }

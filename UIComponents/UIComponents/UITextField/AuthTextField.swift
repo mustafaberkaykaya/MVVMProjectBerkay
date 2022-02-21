@@ -8,6 +8,7 @@
 import UIKit
 
 public class AuthTextField: UITextField {
+    let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,9 +26,16 @@ extension AuthTextField {
         layer.borderColor = UIColor.appLightGray.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
-        
+        height(47)
     }
+    
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 17, left: 16, bottom: 17, right: 0))
-    }
+        return bounds.inset(by: padding)
+      }
+      public override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+      }
+      public override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+      }
 }

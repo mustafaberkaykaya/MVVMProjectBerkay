@@ -28,6 +28,7 @@
 		6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F91C27B540E20082079E /* LoginViewModel.swift */; };
 		6A23F92127B540F70082079E /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92027B540F70082079E /* LoginRoute.swift */; };
 		6A23F92327B5454C0082079E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92227B5454C0082079E /* AppRouter.swift */; };
+		6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */; };
 		6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */; };
 		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
 		6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */; };
@@ -36,6 +37,10 @@
 		6ABF3E5E27B3FED80014D355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5D27B3FED80014D355 /* Assets.xcassets */; };
 		6ABF3E6C27B3FED90014D355 /* NoteBerkayMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E6B27B3FED90014D355 /* NoteBerkayMvvmTests.swift */; };
 		6ABF3E7727B3FED90014D355 /* NoteBerkayMvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E7627B3FED90014D355 /* NoteBerkayMvvmUITests.swift */; };
+		6AF09C0127BF83F400EFF17E /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09BFE27BF83F400EFF17E /* RegisterRouter.swift */; };
+		6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09BFF27BF83F400EFF17E /* RegisterViewController.swift */; };
+		6AF09C0327BF83F400EFF17E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09C0027BF83F400EFF17E /* RegisterViewModel.swift */; };
+		6AF09C0527BF840E00EFF17E /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09C0427BF840E00EFF17E /* RegisterRoute.swift */; };
 		A1C03950FBCEA7CA5689BAA1 /* Pods_NoteBerkayMvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F273B7F994D55F756B56291 /* Pods_NoteBerkayMvvmTests.framework */; };
 		EAD1D2A5EB6E5CDC54EB9FF7 /* Pods_NoteBerkayMvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA0D8178EFDE9A84C9B1142 /* Pods_NoteBerkayMvvm.framework */; };
 		FED9163F194F5AC3529DBF78 /* Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1683BA3DB1B7F397C66EB53 /* Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework */; };
@@ -97,6 +102,7 @@
 		6A23F91C27B540E20082079E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6A23F92027B540F70082079E /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		6A23F92227B5454C0082079E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -112,6 +118,10 @@
 		6ABF3E7627B3FED90014D355 /* NoteBerkayMvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBerkayMvvmUITests.swift; sourceTree = "<group>"; };
 		6ABF3E7827B3FED90014D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ABF3E9C27B40ECC0014D355 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF09BFE27BF83F400EFF17E /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		6AF09BFF27BF83F400EFF17E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6AF09C0027BF83F400EFF17E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		6AF09C0427BF840E00EFF17E /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
 		8DDAC545CD9EFD47199BD1EC /* Pods-NoteBerkayMvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm.release.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm/Pods-NoteBerkayMvvm.release.xcconfig"; sourceTree = "<group>"; };
 		92E3C1C2FA426F7A569082C2 /* Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests/Pods-NoteBerkayMvvm-NoteBerkayMvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1683BA3DB1B7F397C66EB53 /* Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBerkayMvvm_NoteBerkayMvvmUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				6ABF3E5427B3FED50014D355 /* AppDelegate.swift */,
+				6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 		6A23F91827B540BB0082079E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				6AF09BFD27BF83DE00EFF17E /* Register */,
 				6A23F91927B540C20082079E /* Login */,
 			);
 			path = Auth;
@@ -336,6 +348,17 @@
 				6ABF3E7827B3FED90014D355 /* Info.plist */,
 			);
 			path = NoteBerkayMvvmUITests;
+			sourceTree = "<group>";
+		};
+		6AF09BFD27BF83DE00EFF17E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				6AF09BFE27BF83F400EFF17E /* RegisterRouter.swift */,
+				6AF09BFF27BF83F400EFF17E /* RegisterViewController.swift */,
+				6AF09C0027BF83F400EFF17E /* RegisterViewModel.swift */,
+				6AF09C0427BF840E00EFF17E /* RegisterRoute.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		D97D737DA24568F212E9C739 /* Frameworks */ = {
@@ -611,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A23F91E27B540E20082079E /* LoginViewController.swift in Sources */,
+				6AF09C0127BF83F400EFF17E /* RegisterRouter.swift in Sources */,
 				6A23F90727B532A50082079E /* ModalTransition.swift in Sources */,
 				6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */,
 				6A23F90427B532990082079E /* PushTransition.swift in Sources */,
@@ -618,12 +642,16 @@
 				6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */,
 				6AB6C3D027BA8D9E00286238 /* DataProvider.swift in Sources */,
 				6A23F90027B530030082079E /* Router.swift in Sources */,
+				6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */,
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
+				6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
 				6A23F91127B535540082079E /* BaseViewModel.swift in Sources */,
 				6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */,
+				6AF09C0327BF83F400EFF17E /* RegisterViewModel.swift in Sources */,
 				6A23F91027B535540082079E /* BaseViewController.swift in Sources */,
+				6AF09C0527BF840E00EFF17E /* RegisterRoute.swift in Sources */,
 				6A23F91227B535540082079E /* BaseRouter.swift in Sources */,
 				6A23F92327B5454C0082079E /* AppRouter.swift in Sources */,
 				6A23F90A27B532B00082079E /* Transition.swift in Sources */,
