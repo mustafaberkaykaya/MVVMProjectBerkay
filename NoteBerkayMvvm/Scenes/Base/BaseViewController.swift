@@ -39,7 +39,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, LoadingPro
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
-        
+
 }
 
 extension BaseViewController {
