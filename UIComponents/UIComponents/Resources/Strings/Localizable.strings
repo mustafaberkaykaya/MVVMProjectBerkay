@@ -27,5 +27,10 @@
 "Register.forgot" = "Forgot Password?";
 "Register.already" = "Already have an account? ";
 "Register.signIn" = "Sign in now";
+"Register.email_password_usernameError" = "Please be sure to fill in all fields.";
+"Register.emailError" = "Your email address cannot be empty";
+"Register.passwordError" = "Your password cannot be empty";
+"Register.usernameError" = "Your username cannot be empty";
+
 
 

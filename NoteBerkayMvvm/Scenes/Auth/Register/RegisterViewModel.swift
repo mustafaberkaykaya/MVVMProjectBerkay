@@ -35,8 +35,10 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
     }
     
     func sendRegisterRequest(username: String, email: String, password: String) {
+        showLoading?()
         dataProvider.request(for: RegisterRequest(fullName: username, email: email, password: password)) { [weak self] result in
             guard let self = self else { return }
+            self.hideLoading?()
             switch result {
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)

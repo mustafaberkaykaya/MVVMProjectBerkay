@@ -41,16 +41,24 @@ public enum L10n {
     public static let description = L10n.tr("Localizable", "Register.description")
     /// E-mail address
     public static let email = L10n.tr("Localizable", "Register.email")
+    /// Please be sure to fill in all fields.
+    public static let emailPasswordUsernameError = L10n.tr("Localizable", "Register.email_password_usernameError")
+    /// Your email address cannot be empty
+    public static let emailError = L10n.tr("Localizable", "Register.emailError")
     /// Forgot Password?
     public static let forgot = L10n.tr("Localizable", "Register.forgot")
     /// Full Name
     public static let fullName = L10n.tr("Localizable", "Register.fullName")
     /// Password
     public static let password = L10n.tr("Localizable", "Register.password")
+    /// Your password cannot be empty
+    public static let passwordError = L10n.tr("Localizable", "Register.passwordError")
     /// Sign in now
     public static let signIn = L10n.tr("Localizable", "Register.signIn")
     /// Sign Up
     public static let title = L10n.tr("Localizable", "Register.title")
+    /// Your username cannot be empty
+    public static let usernameError = L10n.tr("Localizable", "Register.usernameError")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
