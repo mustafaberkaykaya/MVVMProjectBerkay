@@ -139,7 +139,7 @@ extension RegisterViewController {
 extension RegisterViewController {
     @objc
     private func signUpButtonTapped() {
-        viewModel.pushNotesScene()
+        viewModel.sendRegisterRequest(username: fullNameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
     }
     
     @objc

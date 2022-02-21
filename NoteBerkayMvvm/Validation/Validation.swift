@@ -27,5 +27,4 @@ class Validation {
         }
         return true
     }
-    
 }

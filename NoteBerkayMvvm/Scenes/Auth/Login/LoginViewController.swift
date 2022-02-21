@@ -125,6 +125,21 @@ extension LoginViewController {
     
     @objc
     private func tappedLoginButton() {
+        if let email = textFieldEmail.text, email.isEmpty,
+           let password = textFieldPassword.text, password.isEmpty {
+            return ToastPresenter.showWarningToast(text: L10n.Login.emailandpasswordError)
+        }
+        
+        guard let email = textFieldEmail.text, !email.isEmpty else {
+            return ToastPresenter.showWarningToast(text: L10n.Login.emailError)
+        }
+        guard let password = textFieldPassword.text, !password.isEmpty else {
+            return ToastPresenter.showWarningToast(text: L10n.Login.passwordError)
+        }
+        
+        let validation = Validation()
+        guard validation.isValidPassword(password) else { return }
+        guard validation.isValidEmail(email) else { return }
         viewModel.sendLoginRequest(email: textFieldEmail.text!, password: textFieldPassword.text!)
     }
     

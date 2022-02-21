@@ -14,12 +14,18 @@ public enum L10n {
   public enum Login {
     /// Login or sign up to continue using our app.
     public static let description = L10n.tr("Localizable", "Login.description")
+    /// The email and password you entered did not match our records. Please try again
+    public static let emailandpasswordError = L10n.tr("Localizable", "Login.emailandpasswordError")
+    /// Your email address cannot be empty.
+    public static let emailError = L10n.tr("Localizable", "Login.emailError")
     /// New User?
     public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")
     ///  Sign up now
     public static let footerRight = L10n.tr("Localizable", "Login.footerRight")
     /// Forgot Password?
     public static let forgot = L10n.tr("Localizable", "Login.forgot")
+    /// Your password cannot be empty
+    public static let passwordError = L10n.tr("Localizable", "Login.passwordError")
     /// E-mail adress
     public static let placeholderMail = L10n.tr("Localizable", "Login.placeholderMail")
     /// Password
@@ -31,8 +37,6 @@ public enum L10n {
   public enum Register {
     /// Already have an account? 
     public static let already = L10n.tr("Localizable", "Register.already")
-    /// Sign in now
-    public static let amber = L10n.tr("Localizable", "Register.amber")
     /// Login or sign up to continue using our app.
     public static let description = L10n.tr("Localizable", "Register.description")
     /// E-mail address

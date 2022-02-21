@@ -14,7 +14,7 @@ public struct RegisterRequest: ApiDecodableResponseRequest {
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init(fullName: String, email: String, password:String) {
+    public init(fullName: String, email: String, password: String) {
         parameters["full_name"] = fullName
         parameters["email"] = email
         parameters["password"] = password

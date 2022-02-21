@@ -21,6 +21,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
+    
     let keychain = KeychainSwift()
    
     func sendLoginRequest(email: String, password: String) {
@@ -33,7 +34,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
                 print("başarılı login")
             case .failure:
-                self.showWarningToast?(L10n.Login.error1)
+                self.showWarningToast?(L10n.Login.emailandpasswordError)
             }
         }
     }
@@ -50,4 +51,5 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
         print("Go Register Scene")
         router.pushRegister()
     }
+    
 }
