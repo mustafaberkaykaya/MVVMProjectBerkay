@@ -15,6 +15,7 @@ final class ForgotPasswordConfirmViewController: BaseViewController<ForgotPasswo
     private let contentView = UIViewBuilder().build()
     private let headerView = HeaderView()
     private let loginButton = CustomButton()
+    var email = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +64,13 @@ extension ForgotPasswordConfirmViewController {
 // MARK: - Configure & SetLocalize
 extension ForgotPasswordConfirmViewController {
     private func configureContents() {
+        headerView.descriptionColor = .appGreen
         setLocalize()
     }
     
     private func setLocalize() {
         headerView.titleText = L10n.Confirm.title
-        headerView.descriptionText = L10n.Confirm.description
+        headerView.descriptionText = "An email has been sent to \(email) with further instructions."
         
         loginButton.buttonTitle = L10n.Confirm.button
     }
