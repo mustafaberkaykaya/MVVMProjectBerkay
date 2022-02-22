@@ -29,6 +29,14 @@
 		6A23F92127B540F70082079E /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92027B540F70082079E /* LoginRoute.swift */; };
 		6A23F92327B5454C0082079E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92227B5454C0082079E /* AppRouter.swift */; };
 		6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47F127C3D7DB00845F66 /* Validation.swift */; };
+		6A4C47F727C4CE0C00845F66 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47F427C4CE0C00845F66 /* ForgotPasswordRouter.swift */; };
+		6A4C47F827C4CE0C00845F66 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47F527C4CE0C00845F66 /* ForgotPasswordViewController.swift */; };
+		6A4C47F927C4CE0C00845F66 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47F627C4CE0C00845F66 /* ForgotPasswordViewModel.swift */; };
+		6A4C47FB27C4CE7300845F66 /* ForgotPasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47FA27C4CE7300845F66 /* ForgotPasswordRoute.swift */; };
+		6A4C480A27C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480727C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift */; };
+		6A4C480B27C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480827C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift */; };
+		6A4C480C27C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480927C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift */; };
+		6A4C480E27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480D27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift */; };
 		6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */; };
 		6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */; };
 		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
@@ -104,6 +112,14 @@
 		6A23F92027B540F70082079E /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		6A23F92227B5454C0082079E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		6A4C47F127C3D7DB00845F66 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		6A4C47F427C4CE0C00845F66 /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		6A4C47F527C4CE0C00845F66 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		6A4C47F627C4CE0C00845F66 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		6A4C47FA27C4CE7300845F66 /* ForgotPasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRoute.swift; sourceTree = "<group>"; };
+		6A4C480727C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmRouter.swift; sourceTree = "<group>"; };
+		6A4C480827C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
+		6A4C480927C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewModel.swift; sourceTree = "<group>"; };
+		6A4C480D27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmRoute.swift; sourceTree = "<group>"; };
 		6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
@@ -271,6 +287,8 @@
 		6A23F91827B540BB0082079E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				6A4C480627C4FC5500845F66 /* ForgotPasswordConfirm */,
+				6A4C47F327C4CDD700845F66 /* ForgotPassword */,
 				6AF09BFD27BF83DE00EFF17E /* Register */,
 				6A23F91927B540C20082079E /* Login */,
 			);
@@ -294,6 +312,28 @@
 				6A4C47F127C3D7DB00845F66 /* Validation.swift */,
 			);
 			path = Validation;
+			sourceTree = "<group>";
+		};
+		6A4C47F327C4CDD700845F66 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C47F427C4CE0C00845F66 /* ForgotPasswordRouter.swift */,
+				6A4C47F527C4CE0C00845F66 /* ForgotPasswordViewController.swift */,
+				6A4C47F627C4CE0C00845F66 /* ForgotPasswordViewModel.swift */,
+				6A4C47FA27C4CE7300845F66 /* ForgotPasswordRoute.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		6A4C480627C4FC5500845F66 /* ForgotPasswordConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C480727C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift */,
+				6A4C480827C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift */,
+				6A4C480927C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift */,
+				6A4C480D27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift */,
+			);
+			path = ForgotPasswordConfirm;
 			sourceTree = "<group>";
 		};
 		6AB6C3CA27BA8CF300286238 /* DataProvider */ = {
@@ -653,21 +693,29 @@
 				6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */,
 				6AB6C3D027BA8D9E00286238 /* DataProvider.swift in Sources */,
 				6A23F90027B530030082079E /* Router.swift in Sources */,
+				6A4C480B27C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift in Sources */,
 				6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */,
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
 				6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */,
+				6A4C480E27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift in Sources */,
+				6A4C480C27C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift in Sources */,
 				6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */,
 				6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
 				6A23F91127B535540082079E /* BaseViewModel.swift in Sources */,
 				6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */,
 				6AF09C0327BF83F400EFF17E /* RegisterViewModel.swift in Sources */,
+				6A4C47FB27C4CE7300845F66 /* ForgotPasswordRoute.swift in Sources */,
 				6A23F91027B535540082079E /* BaseViewController.swift in Sources */,
 				6AF09C0527BF840E00EFF17E /* RegisterRoute.swift in Sources */,
 				6A23F91227B535540082079E /* BaseRouter.swift in Sources */,
 				6A23F92327B5454C0082079E /* AppRouter.swift in Sources */,
 				6A23F90A27B532B00082079E /* Transition.swift in Sources */,
+				6A4C47F827C4CE0C00845F66 /* ForgotPasswordViewController.swift in Sources */,
+				6A4C47F927C4CE0C00845F66 /* ForgotPasswordViewModel.swift in Sources */,
 				6A23F91D27B540E20082079E /* LoginRouter.swift in Sources */,
+				6A4C480A27C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift in Sources */,
+				6A4C47F727C4CE0C00845F66 /* ForgotPasswordRouter.swift in Sources */,
 				6ABF3E5527B3FED50014D355 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

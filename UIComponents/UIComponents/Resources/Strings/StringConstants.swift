@@ -11,14 +11,40 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Confirm {
+    /// Login
+    public static let button = L10n.tr("Localizable", "Confirm.button")
+    /// An email has been sent to %@ with further instructions.
+    public static func description(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Confirm.description", String(describing: p1))
+    }
+    /// Password Reset Confirmation
+    public static let title = L10n.tr("Localizable", "Confirm.title")
+  }
+
+  public enum Forgot {
+    /// Reset Password
+    public static let button = L10n.tr("Localizable", "Forgot.button")
+    /// Confirm your email and we’ll send the instructions
+    public static let description = L10n.tr("Localizable", "Forgot.description")
+    /// E-mail address
+    public static let email = L10n.tr("Localizable", "Forgot.email")
+    /// Please enter a valid email address.
+    public static let failed = L10n.tr("Localizable", "Forgot.failed")
+    /// Success
+    public static let succes = L10n.tr("Localizable", "Forgot.succes")
+    /// Forgot Password?
+    public static let title = L10n.tr("Localizable", "Forgot.title")
+  }
+
   public enum Login {
     /// Login or sign up to continue using our app.
     public static let description = L10n.tr("Localizable", "Login.description")
-    /// The email and password you entered did not match our records. Please try again
+    /// Your email address and password cannot be empty.
     public static let emailandpasswordError = L10n.tr("Localizable", "Login.emailandpasswordError")
     /// Your email address cannot be empty.
     public static let emailError = L10n.tr("Localizable", "Login.emailError")
-    /// Failed Login
+    /// The email and password you entered did not match our records. Please try again.
     public static let failed = L10n.tr("Localizable", "Login.failed")
     /// New User?
     public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")
