@@ -15,6 +15,9 @@ $SwiftEntryKit = pod 'SwiftEntryKit', '~> 2.0'
 $SwiftGen = pod 'SwiftGen', '~> 6.5'
 $IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift', '~> 6.5'
 $Kingfisher = pod 'Kingfisher', '~> 6.3.1'
+$IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift’, ‘~> 6.5'
+$KeychainSwift = pod 'KeychainSwift', '~> 20.0'
+
 
 # Pods for UI
 $MobilliumBuilders = pod 'MobilliumBuilders','~> 1.4'
@@ -35,6 +38,7 @@ target 'NoteBerkayMvvm' do
   $MobilliumBuilders
   $TinyConstrain
   $IQKeyboardManagerSwift
+  $KeychainSwift
 
   target 'NoteBerkayMvvmTests' do
     inherit! :search_paths

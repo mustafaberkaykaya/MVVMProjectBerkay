@@ -24,7 +24,7 @@ public extension ApiDecodableResponseRequest {
 // MARK: - url
 public extension ApiDecodableResponseRequest {
     var url: String {
-        return "https://noteberkaymvvm.herokuapp.com/api/" + path
+        return "https://mvvmnoteberkay.herokuapp.com/api/" + path
     }
 }
 
