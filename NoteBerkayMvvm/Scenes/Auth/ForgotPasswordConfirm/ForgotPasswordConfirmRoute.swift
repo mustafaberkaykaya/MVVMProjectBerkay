@@ -13,9 +13,9 @@ extension ForgotPasswordConfirmRoute where Self: RouterProtocol {
     
     func pushForgotPasswordConfirm(email: String) {
         let router = ForgotPasswordConfirmRouter()
-        let viewModel = ForgotPasswordConfirmViewModel(router: router)
+        let viewModel = ForgotPasswordConfirmViewModel(email: email, router: router)
         let viewController = ForgotPasswordConfirmViewController(viewModel: viewModel)
-        viewModel.email = email
+
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition

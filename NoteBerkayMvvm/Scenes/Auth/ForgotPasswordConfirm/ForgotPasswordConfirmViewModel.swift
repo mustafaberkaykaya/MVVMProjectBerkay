@@ -21,6 +21,11 @@ protocol ForgotPasswordConfirmViewProtocol: ForgotPasswordConfirmViewDataSource,
 final class ForgotPasswordConfirmViewModel: BaseViewModel<ForgotPasswordConfirmRouter>, ForgotPasswordConfirmViewProtocol {
     var email: String = ""
     
+    init(email: String, router: ForgotPasswordConfirmRouter) {
+        super.init(router: ForgotPasswordConfirmRouter())
+        self.email = email
+    }
+    
     func pushLoginScreen() {
         router.placeOnWindowLogin()
     }
