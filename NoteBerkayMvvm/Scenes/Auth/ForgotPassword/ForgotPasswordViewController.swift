@@ -74,6 +74,8 @@ extension ForgotPasswordViewController {
 // MARK: - Configure & SetLocalize
 extension ForgotPasswordViewController {
     private func configureContents() {
+        resetPasswordButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .touchUpInside)
+        
         setLocalize()
     }
     
@@ -83,5 +85,13 @@ extension ForgotPasswordViewController {
         
         emailText.placeholder = L10n.Forgot.email
         resetPasswordButton.buttonTitle = L10n.Forgot.button
+    }
+}
+
+// MARK: - Actions
+extension ForgotPasswordViewController {
+    @objc
+    private func resetPasswordButtonTapped() {
+        viewModel.sendForgotPassRequest(email: emailText.text!)
     }
 }

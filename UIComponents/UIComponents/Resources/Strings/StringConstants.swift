@@ -25,11 +25,11 @@ public enum L10n {
   public enum Login {
     /// Login or sign up to continue using our app.
     public static let description = L10n.tr("Localizable", "Login.description")
-    /// The email and password you entered did not match our records. Please try again
+    /// Your email address and password cannot be empty.
     public static let emailandpasswordError = L10n.tr("Localizable", "Login.emailandpasswordError")
     /// Your email address cannot be empty.
     public static let emailError = L10n.tr("Localizable", "Login.emailError")
-    /// Failed Login
+    /// The email and password you entered did not match our records. Please try again.
     public static let failed = L10n.tr("Localizable", "Login.failed")
     /// New User?
     public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")

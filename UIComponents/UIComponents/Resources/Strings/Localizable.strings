@@ -13,11 +13,11 @@
 "Login.forgot" = "Forgot Password?";
 "Login.footerLeft" = "New User?";
 "Login.footerRight" = " Sign up now";
-"Login.emailandpasswordError" = "The email and password you entered did not match our records. Please try again";
+"Login.emailandpasswordError" = "Your email address and password cannot be empty.";
 "Login.emailError" = "Your email address cannot be empty.";
 "Login.passwordError" = "Your password cannot be empty";
 "Login.succes" = "Succes Login";
-"Login.failed" = "Failed Login";
+"Login.failed" = "The email and password you entered did not match our records. Please try again.";
 
 
 // MARK: - Register
