@@ -26,6 +26,7 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordRouter>, Forgot
             case.success(let response):
                 print("*********")
                 print(response.message)
+                self.router.pushForgotPasswordConfirm()
             case.failure(let error):
             print(error)
             }
