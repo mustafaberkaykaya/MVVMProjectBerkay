@@ -16,6 +16,8 @@
 "Login.emailandpasswordError" = "The email and password you entered did not match our records. Please try again";
 "Login.emailError" = "Your email address cannot be empty.";
 "Login.passwordError" = "Your password cannot be empty";
+"Login.succes" = "Succes Login";
+"Login.failed" = "Failed Login";
 
 
 // MARK: - Register
@@ -31,6 +33,12 @@
 "Register.emailError" = "Your email address cannot be empty";
 "Register.passwordError" = "Your password cannot be empty";
 "Register.usernameError" = "Your username cannot be empty";
+"Register.succes" = "Succes Sign Up";
+"Register.failed" = "Failed Sign Up";
+
+// MARK: - Validation
+"Validation.email" = "Please enter a valid email address.";
+"Validation.password" = "Your password must be at least 6 characters.";
 
 
 

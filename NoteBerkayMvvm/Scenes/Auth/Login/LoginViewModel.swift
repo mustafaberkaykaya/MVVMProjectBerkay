@@ -32,9 +32,10 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
             switch result {
             case.success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
-                print("başarılı login")
-            case .failure:
-                self.showWarningToast?(L10n.Login.emailandpasswordError)
+                self.showSuccessToast?(L10n.Login.succes)
+            case .failure(let err):
+                self.showWarningToast?(L10n.Login.failed)
+                print(err.localizedDescription)
             }
         }
     }
@@ -51,5 +52,4 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
         print("Go Register Scene")
         router.pushRegister()
     }
-    
 }

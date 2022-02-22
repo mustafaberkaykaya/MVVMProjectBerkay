@@ -42,8 +42,10 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
             switch result {
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
-            case .failure:
-                print("Hata")
+                self.showSuccessToast?(L10n.Register.succes)
+            case .failure(let err):
+                self.showWarningToast?(L10n.Register.failed)
+                print(err.localizedDescription)
             }
         }
     }

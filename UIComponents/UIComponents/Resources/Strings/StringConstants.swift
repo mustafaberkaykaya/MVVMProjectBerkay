@@ -18,6 +18,8 @@ public enum L10n {
     public static let emailandpasswordError = L10n.tr("Localizable", "Login.emailandpasswordError")
     /// Your email address cannot be empty.
     public static let emailError = L10n.tr("Localizable", "Login.emailError")
+    /// Failed Login
+    public static let failed = L10n.tr("Localizable", "Login.failed")
     /// New User?
     public static let footerLeft = L10n.tr("Localizable", "Login.footerLeft")
     ///  Sign up now
@@ -30,6 +32,8 @@ public enum L10n {
     public static let placeholderMail = L10n.tr("Localizable", "Login.placeholderMail")
     /// Password
     public static let placeholderPass = L10n.tr("Localizable", "Login.placeholderPass")
+    /// Succes Login
+    public static let succes = L10n.tr("Localizable", "Login.succes")
     /// Login
     public static let title = L10n.tr("Localizable", "Login.title")
   }
@@ -45,6 +49,8 @@ public enum L10n {
     public static let emailPasswordUsernameError = L10n.tr("Localizable", "Register.email_password_usernameError")
     /// Your email address cannot be empty
     public static let emailError = L10n.tr("Localizable", "Register.emailError")
+    /// Failed Sign Up
+    public static let failed = L10n.tr("Localizable", "Register.failed")
     /// Forgot Password?
     public static let forgot = L10n.tr("Localizable", "Register.forgot")
     /// Full Name
@@ -55,10 +61,19 @@ public enum L10n {
     public static let passwordError = L10n.tr("Localizable", "Register.passwordError")
     /// Sign in now
     public static let signIn = L10n.tr("Localizable", "Register.signIn")
+    /// Succes Sign Up
+    public static let succes = L10n.tr("Localizable", "Register.succes")
     /// Sign Up
     public static let title = L10n.tr("Localizable", "Register.title")
     /// Your username cannot be empty
     public static let usernameError = L10n.tr("Localizable", "Register.usernameError")
+  }
+
+  public enum Validation {
+    /// Please enter a valid email address.
+    public static let email = L10n.tr("Localizable", "Validation.email")
+    /// Your password must be at least 6 characters.
+    public static let password = L10n.tr("Localizable", "Validation.password")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
