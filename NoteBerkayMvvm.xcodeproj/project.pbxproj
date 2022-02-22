@@ -28,6 +28,7 @@
 		6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F91C27B540E20082079E /* LoginViewModel.swift */; };
 		6A23F92127B540F70082079E /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92027B540F70082079E /* LoginRoute.swift */; };
 		6A23F92327B5454C0082079E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23F92227B5454C0082079E /* AppRouter.swift */; };
+		6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C47F127C3D7DB00845F66 /* Validation.swift */; };
 		6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */; };
 		6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */; };
 		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
@@ -102,6 +103,7 @@
 		6A23F91C27B540E20082079E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6A23F92027B540F70082079E /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		6A23F92227B5454C0082079E /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		6A4C47F127C3D7DB00845F66 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
@@ -286,6 +288,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		6A4C47F027C3D7CC00845F66 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C47F127C3D7DB00845F66 /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		6AB6C3CA27BA8CF300286238 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +334,7 @@
 				6AB6C3CA27BA8CF300286238 /* DataProvider */,
 				6A23F8F827B525BE0082079E /* AppDelegate */,
 				6A23F8F927B52EB10082079E /* Configurations */,
+				6A4C47F027C3D7CC00845F66 /* Validation */,
 				6A23F8FB27B52F170082079E /* Routing */,
 				6A23F90B27B533B90082079E /* Scenes */,
 				6ABF3E5D27B3FED80014D355 /* Assets.xcassets */,
@@ -646,6 +657,7 @@
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
 				6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */,
+				6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
 				6A23F91127B535540082079E /* BaseViewModel.swift in Sources */,
 				6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */,
