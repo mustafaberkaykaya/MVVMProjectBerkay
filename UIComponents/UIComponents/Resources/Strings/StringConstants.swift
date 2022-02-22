@@ -14,6 +14,10 @@ public enum L10n {
   public enum Confirm {
     /// Login
     public static let button = L10n.tr("Localizable", "Confirm.button")
+    /// An email has been sent to %@ with further instructions.
+    public static func description(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Confirm.description", String(describing: p1))
+    }
     /// Password Reset Confirmation
     public static let title = L10n.tr("Localizable", "Confirm.title")
   }

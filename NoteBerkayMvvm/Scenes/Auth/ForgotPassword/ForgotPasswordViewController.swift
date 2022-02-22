@@ -82,7 +82,6 @@ extension ForgotPasswordViewController {
     private func setLocalize() {
         headerView.titleText = L10n.Forgot.title
         headerView.descriptionText = L10n.Forgot.description
-        
         emailText.placeholder = L10n.Forgot.email
         resetPasswordButton.buttonTitle = L10n.Forgot.button
     }

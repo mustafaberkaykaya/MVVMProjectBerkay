@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol ForgotPasswordConfirmViewDataSource {}
+protocol ForgotPasswordConfirmViewDataSource {
+    var email: String { get set }
+}
 
 protocol ForgotPasswordConfirmViewEventSource {}
 
@@ -17,6 +19,7 @@ protocol ForgotPasswordConfirmViewProtocol: ForgotPasswordConfirmViewDataSource,
 }
 
 final class ForgotPasswordConfirmViewModel: BaseViewModel<ForgotPasswordConfirmRouter>, ForgotPasswordConfirmViewProtocol {
+    var email: String = ""
     
     func pushLoginScreen() {
         router.placeOnWindowLogin()

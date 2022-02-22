@@ -50,6 +50,7 @@
 
 // MARK: - ForgotPasswordConfirm
 "Confirm.title" = "Password Reset Confirmation";
+"Confirm.description" = "An email has been sent to %@ with further instructions.";
 "Confirm.button" = "Login";
 
 
