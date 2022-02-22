@@ -46,6 +46,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     
     func pushPasswordResetScene() {
         print("Go Password Reset")
+        router.pushForgotPassword()
     }
     
     func pushRegisterScene() {
