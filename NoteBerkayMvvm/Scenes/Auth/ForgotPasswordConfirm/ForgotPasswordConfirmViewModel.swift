@@ -22,7 +22,7 @@ final class ForgotPasswordConfirmViewModel: BaseViewModel<ForgotPasswordConfirmR
     var email: String = ""
     
     init(email: String, router: ForgotPasswordConfirmRouter) {
-        super.init(router: ForgotPasswordConfirmRouter())
+        super.init(router: router)
         self.email = email
     }
     
