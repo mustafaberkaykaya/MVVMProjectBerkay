@@ -24,11 +24,12 @@ final class ForgotPasswordViewModel: BaseViewModel<ForgotPasswordRouter>, Forgot
             self.hideLoading?()
             switch result {
             case.success(let response):
-                print("*********")
+                self.showSuccessToast?(L10n.Forgot.succes)
                 print(response.message)
                 self.showConfirmMessage(email: email)
             case.failure(let error):
-            print(error)
+                self.showWarningToast?(L10n.Forgot.failed)
+                print(error)
             }
         }
     }

@@ -59,6 +59,7 @@ extension ForgotPasswordConfirmViewController {
         loginButton.trailingToSuperview().constant = -25
         loginButton.height(60)
         loginButton.bottomToSuperview()
+        navigationController?.navigationBar.isHidden = true
     }
 }
 // MARK: - Configure & SetLocalize
@@ -66,6 +67,8 @@ extension ForgotPasswordConfirmViewController {
     private func configureContents() {
         headerView.descriptionColor = .appGreen
         setLocalize()
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private func setLocalize() {
@@ -75,4 +78,11 @@ extension ForgotPasswordConfirmViewController {
         loginButton.buttonTitle = L10n.Confirm.button
     }
 }
- 
+
+// MARK: - Actions
+extension ForgotPasswordConfirmViewController {
+    @objc
+    private func loginButtonTapped() {
+        viewModel.pushLoginScreen()
+    }
+}

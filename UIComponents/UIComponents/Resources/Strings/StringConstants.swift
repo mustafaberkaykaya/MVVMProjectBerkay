@@ -14,8 +14,6 @@ public enum L10n {
   public enum Confirm {
     /// Login
     public static let button = L10n.tr("Localizable", "Confirm.button")
-    /// An email has been sent to alican.kangotan@mobillium.com with further instructions.
-    public static let description = L10n.tr("Localizable", "Confirm.description")
     /// Password Reset Confirmation
     public static let title = L10n.tr("Localizable", "Confirm.title")
   }
@@ -27,6 +25,10 @@ public enum L10n {
     public static let description = L10n.tr("Localizable", "Forgot.description")
     /// E-mail address
     public static let email = L10n.tr("Localizable", "Forgot.email")
+    /// Please enter a valid email address.
+    public static let failed = L10n.tr("Localizable", "Forgot.failed")
+    /// Success
+    public static let succes = L10n.tr("Localizable", "Forgot.succes")
     /// Forgot Password?
     public static let title = L10n.tr("Localizable", "Forgot.title")
   }
