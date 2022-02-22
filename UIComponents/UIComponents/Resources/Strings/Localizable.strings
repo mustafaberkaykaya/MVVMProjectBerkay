@@ -46,5 +46,10 @@
 "Forgot.email" = "E-mail address";
 "Forgot.button" = "Reset Password";
 
+// MARK: - ForgotPasswordConfirm
+"Confirm.title" = "Password Reset Confirmation";
+"Confirm.description" = "An email has been sent to alican.kangotan@mobillium.com with further instructions.";
+"Confirm.button" = "Login";
+
 
 

@@ -11,6 +11,15 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum Confirm {
+    /// Login
+    public static let button = L10n.tr("Localizable", "Confirm.button")
+    /// An email has been sent to alican.kangotan@mobillium.com with further instructions.
+    public static let description = L10n.tr("Localizable", "Confirm.description")
+    /// Password Reset Confirmation
+    public static let title = L10n.tr("Localizable", "Confirm.title")
+  }
+
   public enum Forgot {
     /// Reset Password
     public static let button = L10n.tr("Localizable", "Forgot.button")
