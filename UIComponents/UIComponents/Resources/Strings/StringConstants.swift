@@ -64,6 +64,13 @@ public enum L10n {
     public static let title = L10n.tr("Localizable", "Login.title")
   }
 
+  public enum NoteTop {
+    /// Cancel
+    public static let cancel = L10n.tr("Localizable", "NoteTop.cancel")
+    /// Search...
+    public static let seachbarPlaceHolder = L10n.tr("Localizable", "NoteTop.seachbarPlaceHolder")
+  }
+
   public enum Register {
     /// Already have an account? 
     public static let already = L10n.tr("Localizable", "Register.already")

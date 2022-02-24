@@ -7,12 +7,18 @@
 
 import Foundation
 
-protocol NotesListViewDataSource {}
+protocol NotesListViewDataSource {
 
-protocol NotesListViewEventSource {}
+}
 
-protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSource {}
+protocol NotesListViewEventSource {
+    
+}
+
+protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSource {
+
+}
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
-    
+
 }
