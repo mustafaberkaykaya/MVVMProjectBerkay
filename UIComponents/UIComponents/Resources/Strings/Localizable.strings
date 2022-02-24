@@ -53,9 +53,8 @@
 "Confirm.description" = "An email has been sent to %@ with further instructions.";
 "Confirm.button" = "Login";
 
-// MARK: - NoteListTopView
-"NoteTop.seachbarPlaceHolder" = "Search...";
-"NoteTop.cancel" = "Cancel";
+// MARK: - NoteList
+"NoteList.button" = "Add Note";
 
 
 

@@ -10,11 +10,13 @@ import MobilliumBuilders
 
 final class NotesListViewController: BaseViewController<NotesListViewModel> {
     
-    let tableView = UITableViewBuilder().build()
+    private let tableView = UITableViewBuilder().build()
+    private let addCustomButton = CustomButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+        configureContents()
 
    }
 }
@@ -22,27 +24,49 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
 // MARK: - UILayout
 
 extension NotesListViewController {
-    func addSubViews() {
+    private func addSubViews() {
         addTableView()
+        addButton()
     }
     
-    func addTableView() {
+    private func addTableView() {
         view.addSubview(tableView)
         tableView.edgesToSuperview()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NoteListCell.self, forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
+        tableView.register(NoteListCell.self,
+                           forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
+    }
+    
+    private func addButton() {
+        view.addSubview(addCustomButton)
+        addCustomButton.bottomToSuperview(usingSafeArea: true).constant = -77
+        addCustomButton.centerXToSuperview()
+        addCustomButton.height(42)
+ 
     }
 }
 
 // MARK: - Configure & Set Localize
 extension NotesListViewController {
+    private func configureContents() {
+        setLocalize()
+        
+        addCustomButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
+    }
     
+    private func setLocalize() {
+        addCustomButton.buttonTitle = L10n.NoteList.button
+        
+    }
 }
 
 // MARK: - Actions
 extension NotesListViewController {
-    
+    @objc
+    private func addNoteTapped() {
+        viewModel.addNoteTapped()
+    }
 }
 
 extension NotesListViewController: UITableViewDataSource {
@@ -59,5 +83,7 @@ extension NotesListViewController: UITableViewDataSource {
 }
 
 extension NotesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 102
+    }
 }

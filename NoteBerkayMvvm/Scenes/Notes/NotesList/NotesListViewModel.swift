@@ -16,9 +16,11 @@ protocol NotesListViewEventSource {
 }
 
 protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSource {
-
+    func addNoteTapped()
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
-
+    func addNoteTapped() {
+        router.pushAddNote()
+    }
 }

@@ -15,8 +15,6 @@ public class NoteListCell: UITableViewCell, ReusableView {
     
     public func setupCell(with viewModel: NoteListCellProtocol) {
             self.viewModel = viewModel
-        titleLabel.text = viewModel.titleLabel
-        descriptionLabel.text = viewModel.descriptionLabel
     }
     
     private let containerView = UIView()
@@ -46,14 +44,8 @@ public class NoteListCell: UITableViewCell, ReusableView {
     }
     
     private func configureContents() {
+    
     }
-    
-//    public func set(viewModel: NoteListCellProtocol) {
-//        self.viewModel = viewModel
-//        titleLabel.text = viewModel.titleLabel
-//        descriptionLabel.text = viewModel.descriptionLabel
-//    }
-    
 }
 
 extension NoteListCell {
@@ -70,13 +62,11 @@ extension NoteListCell {
     
     private func addTextStackView() {
         containerView.addSubview(textStackView)
-        textStackView.centerInSuperview()
+        textStackView.edgesToSuperview()
     }
     
     private func addLabels() {
         textStackView.addArrangedSubview(titleLabel)
         textStackView.addArrangedSubview(descriptionLabel)
     }
-    
 }
-
