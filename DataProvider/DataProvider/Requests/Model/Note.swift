@@ -6,7 +6,7 @@
 //
 
 public struct Note: Codable {
-    public let title: String?
     public let note: String?
     public let id: Int?
+    public let title: String?
 }
