@@ -6,14 +6,16 @@
 //
 
 protocol AddNoteRoute {
-    func pushAddNote()
+    func pushAddNote(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
+    func pushDetail(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
+    func pushEdit(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
 }
 
 extension AddNoteRoute where Self: RouterProtocol {
     
-    func pushAddNote() {
+    func pushAddNote(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
         let router = AddNoteRouter()
-        let viewModel = AddNoteViewModel(router: router)
+        let viewModel = AddNoteViewModel(type: type, titleText: titleText, descriptionText: descriptionText, noteId: noteId, router: router)
         let viewController = AddNoteViewController(viewModel: viewModel)
         
         let transition = PushTransition()
@@ -22,4 +24,28 @@ extension AddNoteRoute where Self: RouterProtocol {
         
         open(viewController, transition: transition)
     }
+    
+    func pushDetail(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+          let router = AddNoteRouter()
+          let viewModel = AddNoteViewModel(type: type, titleText: titleText, descriptionText: descriptionText, noteId: noteId, router: router)
+          let viewController = AddNoteViewController(viewModel: viewModel)
+    
+          let transition = PushTransition()
+          router.viewController = viewController
+          router.openTransition = transition
+          
+          open(viewController, transition: transition)
+      }
+    
+    func pushEdit(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+           let router = AddNoteRouter()
+           let viewModel = AddNoteViewModel(type: type, titleText: titleText, descriptionText: descriptionText, noteId: noteId, router: router)
+           let viewController = AddNoteViewController(viewModel: viewModel)
+        
+           let transition = PushTransition()
+           router.viewController = viewController
+           router.openTransition = transition
+           
+           open(viewController, transition: transition)
+       }
 }

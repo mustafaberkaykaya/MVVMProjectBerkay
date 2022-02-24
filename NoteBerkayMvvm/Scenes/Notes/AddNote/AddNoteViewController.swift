@@ -24,6 +24,9 @@ final class AddNoteViewController: BaseViewController<AddNoteViewModel> {
         super.viewDidLoad()
         addSubViews()
         configureContents()
+        
+        titleTextField.text = viewModel.titleText
+        descriptionTextView.text = viewModel.descriptionText
     }
     
 }

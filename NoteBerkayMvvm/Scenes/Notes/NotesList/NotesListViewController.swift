@@ -73,7 +73,7 @@ extension NotesListViewController {
 extension NotesListViewController {
     @objc
     private func addNoteTapped() {
-        viewModel.addNoteTapped()
+        viewModel.addNoteTapped(titleText: "", descriptionText: "", noteId: 0, type: .add)
     }
     
     @objc
@@ -114,5 +114,15 @@ extension NotesListViewController: UITableViewDataSource {
 extension NotesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 102
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellItem: NoteListCellProtocol
+        cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        let title = self.viewModel.cellItems[indexPath.row].titleText
+        let description = self.viewModel.cellItems[indexPath.row].descriptionText
+        let noteID = self.viewModel.cellItems[indexPath.row].noteID
+        print(title)
+        viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
     }
 }
