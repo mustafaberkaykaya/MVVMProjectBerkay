@@ -22,6 +22,7 @@ final class AddNoteViewModel: BaseViewModel<AddNoteRouter>, AddNoteViewProtocol 
             switch result {
             case .success(let response):
                 print(response)
+                NotificationCenter.default.post(name: .reloadDataNotification, object: nil)
                 self.router.close()
             case .failure(let err):
             print(err.localizedDescription)

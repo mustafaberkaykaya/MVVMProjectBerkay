@@ -13,10 +13,6 @@ public class NoteListCell: UITableViewCell, ReusableView {
     
     weak var viewModel: NoteListCellProtocol?
     
-    public func setupCell(with viewModel: NoteListCellProtocol) {
-            self.viewModel = viewModel
-    }
-    
     private let containerView = UIView()
     private let textStackView = UIStackViewBuilder()
                .spacing(12)
@@ -30,6 +26,13 @@ public class NoteListCell: UITableViewCell, ReusableView {
     private let descriptionLabel = UILabelBuilder()
             .font(.font(.josefinSansRegular, size: 13))
             .build()
+    
+    public func setupCell(with viewModel: NoteListCellProtocol) {
+        self.viewModel = viewModel
+        self.titleLabel.text = viewModel.titleText
+        self.descriptionLabel.text = viewModel.descriptionText
+        
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
