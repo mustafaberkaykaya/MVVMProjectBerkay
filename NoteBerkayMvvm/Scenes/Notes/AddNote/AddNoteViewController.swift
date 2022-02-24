@@ -79,6 +79,8 @@ extension AddNoteViewController {
 extension AddNoteViewController {
     @objc
     private func saveButtonTapped() {
-        print("calss")
+        let title = titleTextField.text ?? ""
+        let description = descriptionTextView.text ?? ""
+        viewModel.addNote(title: title, description: description)
     }
 }
