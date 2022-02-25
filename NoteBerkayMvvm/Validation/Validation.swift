@@ -27,4 +27,12 @@ class Validation {
         }
         return true
     }
+    
+    func isValidAnyText(_ text: String) -> Bool {
+        guard text.count >= 1 else {
+            ToastPresenter.showWarningToast(text: L10n.Validation.text)
+            return false
+        }
+        return true
+    }
 }

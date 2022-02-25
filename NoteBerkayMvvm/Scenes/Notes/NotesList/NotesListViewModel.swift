@@ -17,14 +17,13 @@ protocol NotesListViewEventSource {
 }
 
 protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSource {
-    func addNoteTapped(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
-    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
-    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
+    func configureRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
     func getMyNotes()
     func deleteNote(noteID: Int)
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
+    
     var didSuccessFetchRecipes: VoidClosure?
     var cellItems: [NoteListCellProtocol] = [NoteListCellModel(title: "", description: "", noteID: 0)]
     
@@ -37,17 +36,11 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
         return cellItems.count
     }
     
-    func addNoteTapped(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
-        router.pushAddNote(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
-    }
-    
-    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
-        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
-    }
-    
-    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
-        router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
-        self.didSuccessFetchRecipes?()
+    func configureRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushNote(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
+        if type == .update {
+            self.didSuccessFetchRecipes?()
+        }
     }
     
     func getMyNotes() {

@@ -118,6 +118,8 @@ public enum L10n {
     public static let email = L10n.tr("Localizable", "Validation.email")
     /// Your password must be at least 6 characters.
     public static let password = L10n.tr("Localizable", "Validation.password")
+    /// Please be sure to fill in all fields.
+    public static let text = L10n.tr("Localizable", "Validation.text")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

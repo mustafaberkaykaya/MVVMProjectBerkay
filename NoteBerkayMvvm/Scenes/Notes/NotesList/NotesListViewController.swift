@@ -17,18 +17,12 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+        setLocalize()
         viewModel.getMyNotes()
         configureContents()
         subscribeViewModelEvents()
-        
+        notificationCenter()
    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        let notificationCenter: NotificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
-    }
 }
 
 // MARK: - UILayout
@@ -41,12 +35,6 @@ extension NotesListViewController {
     private func addTableView() {
         view.addSubview(tableView)
         tableView.edgesToSuperview()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(NoteListCell.self,
-                           forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
     private func addButton() {
@@ -60,9 +48,13 @@ extension NotesListViewController {
 // MARK: - Configure & Set Localize
 extension NotesListViewController {
     private func configureContents() {
-        setLocalize()
-        
         addCustomButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NoteListCell.self,
+                           forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
+        tableView.refreshControl = refreshControl
 }
     
     private func setLocalize() {
@@ -74,13 +66,13 @@ extension NotesListViewController {
 extension NotesListViewController {
     @objc
     private func addNoteTapped() {
-        viewModel.addNoteTapped(titleText: "", descriptionText: "", noteId: 0, type: .add)
+        viewModel.configureRow(titleText: "", descriptionText: "", noteId: 0, type: .add)
     }
     
     @objc
     private func pullToRefreshValueChanged() {
-            viewModel.cellItems.isEmpty ? viewModel.getMyNotes() : tableView.reloadData()
-            refreshControl.endRefreshing()
+        viewModel.cellItems.isEmpty ? viewModel.getMyNotes() : tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     private func subscribeViewModelEvents() {
@@ -104,8 +96,7 @@ extension NotesListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NoteListCell = tableView.dequeueReusableCell(for: indexPath)
-        let cellItem: NoteListCellProtocol
-        cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        let cellItem: NoteListCellProtocol = viewModel.cellItemAt(indexPath: indexPath)
         cell.setupCell(with: cellItem)
         cell.selectionStyle = .none
         return cell
@@ -118,13 +109,9 @@ extension NotesListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellItem: NoteListCellProtocol
-        cellItem = viewModel.cellItemAt(indexPath: indexPath)
-        let title = self.viewModel.cellItems[indexPath.row].titleText
-        let description = self.viewModel.cellItems[indexPath.row].descriptionText
-        let noteID = self.viewModel.cellItems[indexPath.row].noteID
-        print(title)
-        viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
+        let cellItem: NoteListCellProtocol = viewModel.cellItemAt(indexPath: indexPath)
+        let note = self.viewModel.cellItems[indexPath.row]
+        viewModel.configureRow(titleText: note.titleText, descriptionText: note.descriptionText, noteId: note.noteID, type: .showNote)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -159,10 +146,18 @@ extension NotesListViewController: UITableViewDelegate {
         self.viewModel.deleteNote(noteID: noteID)
         tableView.reloadData()
     }
+    
     private func swipeEditAction(indexPath: IndexPath) {
         let title = self.viewModel.cellItems[indexPath.row].titleText
         let description = self.viewModel.cellItems[indexPath.row].descriptionText
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
-        self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
+        self.viewModel.configureRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
+    }
+}
+
+extension NotesListViewController {
+    func notificationCenter() {
+        let notificationCenter: NotificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
     }
 }

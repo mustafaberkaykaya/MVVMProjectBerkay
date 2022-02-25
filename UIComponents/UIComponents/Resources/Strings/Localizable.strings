@@ -39,6 +39,7 @@
 // MARK: - Validation
 "Validation.email" = "Please enter a valid email address.";
 "Validation.password" = "Your password must be at least 6 characters.";
+"Validation.text" = "Please be sure to fill in all fields.";
 
 // MARK: - ForgotPassword
 "Forgot.title" = "Forgot Password?";
@@ -63,6 +64,7 @@
 
 // MARK: - AddNote
 "AddNote.save" = "Save Note";
+
 
 
 
