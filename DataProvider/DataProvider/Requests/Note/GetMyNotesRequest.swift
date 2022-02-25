@@ -5,7 +5,7 @@
 //  Created by Mustafa Berkay Kaya on 24.02.2022.
 //
 
-public struct GetMyNotesRequestRequest: ApiDecodableResponseRequest {
+public struct GetMyNotesRequest: ApiDecodableResponseRequest {
     
     public typealias ResponseType = GetNotes
     

@@ -5,7 +5,7 @@
 //  Created by Mustafa Berkay Kaya on 25.02.2022.
 //
 
-public struct NoteDeleteRequestRequest: ApiDecodableResponseRequest {
+public struct NoteDeleteRequest: ApiDecodableResponseRequest {
     
     public typealias ResponseType = DeleteNoteResponse
     
