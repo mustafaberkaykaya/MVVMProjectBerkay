@@ -72,6 +72,14 @@ public enum L10n {
   public enum NoteList {
     /// Add Note
     public static let button = L10n.tr("Localizable", "NoteList.button")
+    /// Cancel
+    public static let deletefirstButton = L10n.tr("Localizable", "NoteList.deletefirstButton")
+    /// Are you sure you want to delete this note
+    public static let deleteMessage1 = L10n.tr("Localizable", "NoteList.deleteMessage1")
+    /// Delete
+    public static let deletesecondButton = L10n.tr("Localizable", "NoteList.deletesecondButton")
+    /// Delete Note
+    public static let deleteTitle1 = L10n.tr("Localizable", "NoteList.deleteTitle1")
   }
 
   public enum Register {

@@ -17,9 +17,10 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
+        viewModel.getMyNotes()
         configureContents()
         subscribeViewModelEvents()
-        viewModel.getMyNotes()
+        
    }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,5 +125,44 @@ extension NotesListViewController: UITableViewDelegate {
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
         print(title)
         viewModel.didSelectRow(titleText: title, descriptionText: description, noteId: noteID, type: .showNote)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAct = UIContextualAction(style: .destructive, title: "") {_, _, completionHandler in
+            AlertUtility.shared.multiButton(title: L10n.NoteList.deleteTitle1,
+                                            message: L10n.NoteList.deleteMessage1,
+                                            firstButtonTitle: L10n.NoteList.deletefirstButton,
+                                            secondButtonTitle1: L10n.NoteList.deletesecondButton,
+                                            firstButtonHandler: { _ in },
+                                            secondButtonHandler: { _ in
+        self.swipeDeleteAction(indexPath: indexPath) }, delegate: self )
+        completionHandler(true) }
+
+        deleteAct.image = .icTrash
+        deleteAct.backgroundColor = .appRed
+        let editAct = UIContextualAction(style: .normal, title: "") { _, _, completionHandler in
+            self.swipeEditAction(indexPath: indexPath)
+            completionHandler(true)
+        }
+        editAct.backgroundColor = .appYellow
+        editAct.image = .icEdit
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAct, editAct])
+        swipeConfiguration.performsFirstActionWithFullSwipe = false
+        return swipeConfiguration
+        
+    }
+    
+    private func swipeDeleteAction(indexPath: IndexPath) {
+        let noteID = self.viewModel.cellItems[indexPath.row].noteID
+        self.viewModel.deleteNote(noteID: noteID)
+        tableView.reloadData()
+    }
+    private func swipeEditAction(indexPath: IndexPath) {
+        let title = self.viewModel.cellItems[indexPath.row].titleText
+        let description = self.viewModel.cellItems[indexPath.row].descriptionText
+        let noteID = self.viewModel.cellItems[indexPath.row].noteID
+        self.viewModel.editRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
     }
 }

@@ -19,8 +19,9 @@ protocol NotesListViewEventSource {
 protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSource {
     func addNoteTapped(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
     func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
-    
+    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
     func getMyNotes()
+    func deleteNote(noteID: Int)
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
@@ -36,8 +37,21 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
         return cellItems.count
     }
     
+    func addNoteTapped(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushAddNote(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
+    }
+    
+    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
+    }
+    
+    func editRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
+        router.pushEdit(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
+        self.didSuccessFetchRecipes?()
+    }
+    
     func getMyNotes() {
-        dataProvider.request(for: GetMyNotesRequestRequest()) { [weak self] (result) in
+        dataProvider.request(for: GetMyNotesRequest()) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let response):
@@ -51,11 +65,16 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
         }
     }
     
-    func addNoteTapped(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
-        router.pushAddNote(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
-    }
-    
-    func didSelectRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType) {
-        router.pushDetail(titleText: titleText, descriptionText: descriptionText, noteId: noteId, type: type)
+    func deleteNote(noteID: Int) {
+        dataProvider.request(for: NoteDeleteRequest(noteId: noteID)) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.getMyNotes()
+                self.didSuccessFetchRecipes?()
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }

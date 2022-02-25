@@ -55,9 +55,15 @@
 
 // MARK: - NoteList
 "NoteList.button" = "Add Note";
+"NoteList.deleteTitle1" = "Delete Note";
+"NoteList.deleteMessage1" = "Are you sure you want to delete this note";
+"NoteList.deletefirstButton" = "Cancel";
+"NoteList.deletesecondButton" = "Delete";
+
 
 // MARK: - AddNote
 "AddNote.save" = "Save Note";
+
 
 
 

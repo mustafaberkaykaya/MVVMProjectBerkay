@@ -25,6 +25,7 @@ public class NoteListCell: UITableViewCell, ReusableView {
                 .build()
     private let descriptionLabel = UILabelBuilder()
             .font(.font(.josefinSansRegular, size: 13))
+            .numberOfLines(2)
             .build()
     
     public func setupCell(with viewModel: NoteListCellProtocol) {
@@ -65,7 +66,9 @@ extension NoteListCell {
     
     private func addTextStackView() {
         containerView.addSubview(textStackView)
-        textStackView.edgesToSuperview()
+        textStackView.leadingToSuperview().constant = 20
+        textStackView.trailingToSuperview().constant = -20
+        textStackView.topToSuperview().constant = 25
     }
     
     private func addLabels() {
