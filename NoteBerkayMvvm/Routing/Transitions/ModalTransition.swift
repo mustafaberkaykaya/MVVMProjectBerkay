@@ -26,16 +26,16 @@ class ModalTransition: NSObject {
 // MARK: - Transition
 
 extension ModalTransition: Transition {
-
+    func close(_ viewController: UIViewController) {
+        viewController.dismiss(animated: isAnimated, completion: completionHandler)
+    }
+    
     func open(_ viewController: UIViewController) {
         viewController.transitioningDelegate = self
 
         self.viewController?.present(viewController, animated: isAnimated, completion: completionHandler)
     }
 
-    func close(_ viewController: UIViewController, completion: (() -> Void)?) {
-        viewController.dismiss(animated: isAnimated, completion: completion)
-    }
 }
 
 // MARK: - UIViewControllerTransitioningDelegate

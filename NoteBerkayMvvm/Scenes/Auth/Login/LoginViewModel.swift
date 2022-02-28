@@ -33,6 +33,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
             case.success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
                 self.showSuccessToast?(L10n.Login.succes)
+                self.pushNotesScene()
             case .failure(let err):
                 self.showWarningToast?(L10n.Login.failed)
                 print(err.localizedDescription)
@@ -41,7 +42,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     }
     
     func pushNotesScene() {
-        print("Go Notes Scene")
+        router.pushNotesList()
     }
     
     func pushPasswordResetScene() {

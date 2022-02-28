@@ -38,6 +38,10 @@
 		6A4C480C27C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480927C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift */; };
 		6A4C480E27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C480D27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift */; };
 		6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */; };
+		6A65BA5827C6246200886636 /* NotesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5527C6246200886636 /* NotesListRouter.swift */; };
+		6A65BA5927C6246200886636 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5627C6246200886636 /* NotesListViewController.swift */; };
+		6A65BA5A27C6246200886636 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5727C6246200886636 /* NotesListViewModel.swift */; };
+		6A65BA5C27C6248600886636 /* NotesListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5B27C6248600886636 /* NotesListRoute.swift */; };
 		6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */; };
 		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
 		6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */; };
@@ -46,6 +50,12 @@
 		6ABF3E5E27B3FED80014D355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ABF3E5D27B3FED80014D355 /* Assets.xcassets */; };
 		6ABF3E6C27B3FED90014D355 /* NoteBerkayMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E6B27B3FED90014D355 /* NoteBerkayMvvmTests.swift */; };
 		6ABF3E7727B3FED90014D355 /* NoteBerkayMvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABF3E7627B3FED90014D355 /* NoteBerkayMvvmUITests.swift */; };
+		6AD00BC127C78217008F9190 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BBE27C78217008F9190 /* AddNoteRouter.swift */; };
+		6AD00BC227C78217008F9190 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BBF27C78217008F9190 /* AddNoteViewController.swift */; };
+		6AD00BC327C78217008F9190 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BC027C78217008F9190 /* AddNoteViewModel.swift */; };
+		6AD00BC527C7822A008F9190 /* AddNoteRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BC427C7822A008F9190 /* AddNoteRoute.swift */; };
+		6AD00BDA27C7F29C008F9190 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BD927C7F29C008F9190 /* Notification+Extension.swift */; };
+		6AD00BDD27C7F747008F9190 /* DetailVCShowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD00BDC27C7F747008F9190 /* DetailVCShowType.swift */; };
 		6AF09C0127BF83F400EFF17E /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09BFE27BF83F400EFF17E /* RegisterRouter.swift */; };
 		6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09BFF27BF83F400EFF17E /* RegisterViewController.swift */; };
 		6AF09C0327BF83F400EFF17E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF09C0027BF83F400EFF17E /* RegisterViewModel.swift */; };
@@ -121,6 +131,10 @@
 		6A4C480927C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewModel.swift; sourceTree = "<group>"; };
 		6A4C480D27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmRoute.swift; sourceTree = "<group>"; };
 		6A60AB8927C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
+		6A65BA5527C6246200886636 /* NotesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListRouter.swift; sourceTree = "<group>"; };
+		6A65BA5627C6246200886636 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
+		6A65BA5727C6246200886636 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
+		6A65BA5B27C6248600886636 /* NotesListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListRoute.swift; sourceTree = "<group>"; };
 		6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -136,6 +150,12 @@
 		6ABF3E7627B3FED90014D355 /* NoteBerkayMvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBerkayMvvmUITests.swift; sourceTree = "<group>"; };
 		6ABF3E7827B3FED90014D355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ABF3E9C27B40ECC0014D355 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AD00BBE27C78217008F9190 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
+		6AD00BBF27C78217008F9190 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		6AD00BC027C78217008F9190 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		6AD00BC427C7822A008F9190 /* AddNoteRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRoute.swift; sourceTree = "<group>"; };
+		6AD00BD927C7F29C008F9190 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		6AD00BDC27C7F747008F9190 /* DetailVCShowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCShowType.swift; sourceTree = "<group>"; };
 		6AF09BFE27BF83F400EFF17E /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		6AF09BFF27BF83F400EFF17E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6AF09C0027BF83F400EFF17E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -259,6 +279,7 @@
 		6A23F90B27B533B90082079E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6A65BA5327C6244400886636 /* Notes */,
 				6A23F91827B540BB0082079E /* Auth */,
 				6A23F90C27B533C70082079E /* Base */,
 			);
@@ -336,6 +357,26 @@
 			path = ForgotPasswordConfirm;
 			sourceTree = "<group>";
 		};
+		6A65BA5327C6244400886636 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				6AD00BBD27C78160008F9190 /* AddNote */,
+				6A65BA5427C6244D00886636 /* NotesList */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		6A65BA5427C6244D00886636 /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				6A65BA5527C6246200886636 /* NotesListRouter.swift */,
+				6A65BA5627C6246200886636 /* NotesListViewController.swift */,
+				6A65BA5727C6246200886636 /* NotesListViewModel.swift */,
+				6A65BA5B27C6248600886636 /* NotesListRoute.swift */,
+			);
+			path = NotesList;
+			sourceTree = "<group>";
+		};
 		6AB6C3CA27BA8CF300286238 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +415,8 @@
 				6AB6C3CA27BA8CF300286238 /* DataProvider */,
 				6A23F8F827B525BE0082079E /* AppDelegate */,
 				6A23F8F927B52EB10082079E /* Configurations */,
+				6AD00BDB27C7F700008F9190 /* Entity */,
+				6AD00BD827C7F284008F9190 /* Extension */,
 				6A4C47F027C3D7CC00845F66 /* Validation */,
 				6A23F8FB27B52F170082079E /* Routing */,
 				6A23F90B27B533B90082079E /* Scenes */,
@@ -399,6 +442,33 @@
 				6ABF3E7827B3FED90014D355 /* Info.plist */,
 			);
 			path = NoteBerkayMvvmUITests;
+			sourceTree = "<group>";
+		};
+		6AD00BBD27C78160008F9190 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				6AD00BBE27C78217008F9190 /* AddNoteRouter.swift */,
+				6AD00BBF27C78217008F9190 /* AddNoteViewController.swift */,
+				6AD00BC027C78217008F9190 /* AddNoteViewModel.swift */,
+				6AD00BC427C7822A008F9190 /* AddNoteRoute.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		6AD00BD827C7F284008F9190 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6AD00BD927C7F29C008F9190 /* Notification+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6AD00BDB27C7F700008F9190 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6AD00BDC27C7F747008F9190 /* DetailVCShowType.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		6AF09BFD27BF83DE00EFF17E /* Register */ = {
@@ -684,6 +754,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A65BA5827C6246200886636 /* NotesListRouter.swift in Sources */,
 				6A23F91E27B540E20082079E /* LoginViewController.swift in Sources */,
 				6AF09C0127BF83F400EFF17E /* RegisterRouter.swift in Sources */,
 				6A23F90727B532A50082079E /* ModalTransition.swift in Sources */,
@@ -693,27 +764,36 @@
 				6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */,
 				6AB6C3D027BA8D9E00286238 /* DataProvider.swift in Sources */,
 				6A23F90027B530030082079E /* Router.swift in Sources */,
+				6AD00BC127C78217008F9190 /* AddNoteRouter.swift in Sources */,
 				6A4C480B27C4FC8200845F66 /* ForgotPasswordConfirmViewController.swift in Sources */,
 				6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */,
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
 				6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */,
+				6AD00BC527C7822A008F9190 /* AddNoteRoute.swift in Sources */,
+				6A65BA5C27C6248600886636 /* NotesListRoute.swift in Sources */,
 				6A4C480E27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift in Sources */,
 				6A4C480C27C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift in Sources */,
+				6A65BA5A27C6246200886636 /* NotesListViewModel.swift in Sources */,
 				6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */,
+				6AD00BC327C78217008F9190 /* AddNoteViewModel.swift in Sources */,
 				6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
 				6A23F91127B535540082079E /* BaseViewModel.swift in Sources */,
 				6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */,
 				6AF09C0327BF83F400EFF17E /* RegisterViewModel.swift in Sources */,
 				6A4C47FB27C4CE7300845F66 /* ForgotPasswordRoute.swift in Sources */,
+				6AD00BDD27C7F747008F9190 /* DetailVCShowType.swift in Sources */,
 				6A23F91027B535540082079E /* BaseViewController.swift in Sources */,
 				6AF09C0527BF840E00EFF17E /* RegisterRoute.swift in Sources */,
 				6A23F91227B535540082079E /* BaseRouter.swift in Sources */,
 				6A23F92327B5454C0082079E /* AppRouter.swift in Sources */,
+				6AD00BDA27C7F29C008F9190 /* Notification+Extension.swift in Sources */,
+				6A65BA5927C6246200886636 /* NotesListViewController.swift in Sources */,
 				6A23F90A27B532B00082079E /* Transition.swift in Sources */,
 				6A4C47F827C4CE0C00845F66 /* ForgotPasswordViewController.swift in Sources */,
 				6A4C47F927C4CE0C00845F66 /* ForgotPasswordViewModel.swift in Sources */,
 				6A23F91D27B540E20082079E /* LoginRouter.swift in Sources */,
+				6AD00BC227C78217008F9190 /* AddNoteViewController.swift in Sources */,
 				6A4C480A27C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift in Sources */,
 				6A4C47F727C4CE0C00845F66 /* ForgotPasswordRouter.swift in Sources */,
 				6ABF3E5527B3FED50014D355 /* AppDelegate.swift in Sources */,

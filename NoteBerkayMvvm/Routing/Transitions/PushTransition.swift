@@ -42,7 +42,7 @@ extension PushTransition: Transition {
         self.viewController?.navigationController?.pushViewController(viewController, animated: isAnimated)
     }
     
-    func close(_ viewController: UIViewController, completion: (() -> Void)?) {
+    func close(_ viewController: UIViewController) {
         self.viewController?.navigationController?.popViewController(animated: isAnimated)
     }
 }

@@ -39,6 +39,7 @@
 // MARK: - Validation
 "Validation.email" = "Please enter a valid email address.";
 "Validation.password" = "Your password must be at least 6 characters.";
+"Validation.text" = "Please be sure to fill in all fields.";
 
 // MARK: - ForgotPassword
 "Forgot.title" = "Forgot Password?";
@@ -52,6 +53,21 @@
 "Confirm.title" = "Password Reset Confirmation";
 "Confirm.description" = "An email has been sent to %@ with further instructions.";
 "Confirm.button" = "Login";
+
+// MARK: - NoteList
+"NoteList.button" = "Add Note";
+"NoteList.deleteTitle1" = "Delete Note";
+"NoteList.deleteMessage1" = "Are you sure you want to delete this note";
+"NoteList.deletefirstButton" = "Cancel";
+"NoteList.deletesecondButton" = "Delete";
+
+
+// MARK: - AddNote
+"AddNote.save" = "Save Note";
+
+
+
+
 
 
 

@@ -8,23 +8,21 @@
 import UIKit
 
 protocol RouterProtocol: AnyObject {
-    var viewController: UIViewController? { get }
-
-    func open(_ viewController: UIViewController, transition: Transition)
-    func close(completion: (() -> Void)?)
+    func open( _ viewController: UIViewController, transition: Transition)
+    func close()
 }
 
 class Router: RouterProtocol {
-    
+
     weak var viewController: UIViewController?
     var openTransition: Transition?
 
-    func open(_ viewController: UIViewController, transition: Transition) {
+    func open( _ viewController: UIViewController, transition: Transition) {
         transition.viewController = self.viewController
         transition.open(viewController)
     }
 
-    func close(completion: (() -> Void)?) {
+    func close() {
         guard let openTransition = openTransition else {
             assertionFailure("You should specify an open transition in order to close a module.")
             return
@@ -33,10 +31,10 @@ class Router: RouterProtocol {
             assertionFailure("Nothing to close.")
             return
         }
-        openTransition.close(viewController, completion: completion)
+        openTransition.close(viewController)
     }
-    
+
     deinit {
-        debugPrint("deinit \(self)")
+        debugPrint("deinit (self)")
     }
 }

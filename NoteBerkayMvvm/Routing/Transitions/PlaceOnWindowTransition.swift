@@ -8,6 +8,8 @@
 import UIKit
 
 class PlaceOnWindowTransition: Transition {
+    func close(_ viewController: UIViewController) {
+    }
     
     var viewController: UIViewController?
     
@@ -19,7 +21,5 @@ class PlaceOnWindowTransition: Transition {
             }
         }, completion: nil)
     }
-    
-    func close(_ viewController: UIViewController, completion: (() -> Void)?) {}
-    
+
 }
