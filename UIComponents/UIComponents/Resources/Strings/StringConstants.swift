@@ -11,6 +11,11 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
 
+  public enum AddNote {
+    /// Save Note
+    public static let save = L10n.tr("Localizable", "AddNote.save")
+  }
+
   public enum Confirm {
     /// Login
     public static let button = L10n.tr("Localizable", "Confirm.button")
@@ -64,6 +69,19 @@ public enum L10n {
     public static let title = L10n.tr("Localizable", "Login.title")
   }
 
+  public enum NoteList {
+    /// Add Note
+    public static let button = L10n.tr("Localizable", "NoteList.button")
+    /// Cancel
+    public static let deletefirstButton = L10n.tr("Localizable", "NoteList.deletefirstButton")
+    /// Are you sure you want to delete this note
+    public static let deleteMessage1 = L10n.tr("Localizable", "NoteList.deleteMessage1")
+    /// Delete
+    public static let deletesecondButton = L10n.tr("Localizable", "NoteList.deletesecondButton")
+    /// Delete Note
+    public static let deleteTitle1 = L10n.tr("Localizable", "NoteList.deleteTitle1")
+  }
+
   public enum Register {
     /// Already have an account? 
     public static let already = L10n.tr("Localizable", "Register.already")
@@ -100,6 +118,8 @@ public enum L10n {
     public static let email = L10n.tr("Localizable", "Validation.email")
     /// Your password must be at least 6 characters.
     public static let password = L10n.tr("Localizable", "Validation.password")
+    /// Please be sure to fill in all fields.
+    public static let text = L10n.tr("Localizable", "Validation.text")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
