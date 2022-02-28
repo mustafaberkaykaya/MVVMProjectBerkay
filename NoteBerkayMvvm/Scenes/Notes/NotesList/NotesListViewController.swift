@@ -13,6 +13,7 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
     private let tableView = UITableViewBuilder().build()
     private let addCustomButton = CustomButton()
     private let refreshControl = UIRefreshControl()
+    private let topView = NoteListTopView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,26 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
 // MARK: - UILayout
 extension NotesListViewController {
     private func addSubViews() {
+        makeTopView()
         addTableView()
         addButton()
     }
     
+    private func makeTopView() {
+        view.addSubview(topView)
+        topView.backgroundColor = .white
+        topView.topToSuperview().constant = 44
+        topView.leadingToSuperview()
+        topView.trailingToSuperview()
+        topView.height(66)
+    }
+    
     private func addTableView() {
         view.addSubview(tableView)
-        tableView.edgesToSuperview()
+        tableView.topToBottom(of: topView)
+        tableView.leadingToSuperview()
+        tableView.trailingToSuperview()
+        tableView.bottomToSuperview()
     }
     
     private func addButton() {
@@ -48,6 +62,7 @@ extension NotesListViewController {
 // MARK: - Configure & Set Localize
 extension NotesListViewController {
     private func configureContents() {
+        navigationController?.navigationBar.isHidden = true
         addCustomButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
         tableView.delegate = self

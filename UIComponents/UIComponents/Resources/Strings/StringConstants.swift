@@ -82,6 +82,13 @@ public enum L10n {
     public static let deleteTitle1 = L10n.tr("Localizable", "NoteList.deleteTitle1")
   }
 
+  public enum NoteListTop {
+    /// Cancel
+    public static let cancel = L10n.tr("Localizable", "NoteListTop.cancel")
+    /// Search...
+    public static let searchPlace = L10n.tr("Localizable", "NoteListTop.searchPlace")
+  }
+
   public enum Register {
     /// Already have an account? 
     public static let already = L10n.tr("Localizable", "Register.already")
