@@ -30,7 +30,6 @@ final class NotesListViewController: BaseViewController<NotesListViewModel>, UIS
     }()
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search"
         searchBar.autocapitalizationType = .none
         searchBar.backgroundImage = UIImage()
         searchBar.becomeFirstResponder()
@@ -107,6 +106,7 @@ extension NotesListViewController {
     
     private func setLocalize() {
         addCustomButton.buttonTitle = L10n.NoteList.button
+        searchBar.placeholder = L10n.NoteListTop.cancel
     }
 }
 
