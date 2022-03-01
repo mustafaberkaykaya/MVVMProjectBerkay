@@ -84,6 +84,13 @@ extension ProfileViewController {
                                                            style: .done,
                                                            target: self,
                                                            action: #selector(backButtonTapped))
+        let gestureRecognizerChangePassword = UITapGestureRecognizer(target: self, action: #selector(changePasswordLabelTapped))
+        let gestureRecognizerSignOut = UITapGestureRecognizer(target: self, action: #selector(changeSignOutLabelTapped))
+        
+        changePasswordLabel.isUserInteractionEnabled = true
+        signOutLabel.isUserInteractionEnabled = true
+        changePasswordLabel.addGestureRecognizer(gestureRecognizerChangePassword)
+        signOutLabel.addGestureRecognizer(gestureRecognizerSignOut)
     }
     
     private func setLocalize() {
@@ -99,4 +106,14 @@ extension ProfileViewController {
     private func backButtonTapped() {
         viewModel.showNoteList()
    }
+
+    @objc
+    private func changePasswordLabelTapped() {
+        viewModel.pushChangePassword()
+    }
+    
+    @objc
+    private func changeSignOutLabelTapped() {
+        viewModel.pushSignOut()
+    }
 }

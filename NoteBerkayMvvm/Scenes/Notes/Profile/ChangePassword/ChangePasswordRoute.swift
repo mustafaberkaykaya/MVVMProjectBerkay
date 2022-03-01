@@ -16,7 +16,7 @@ extension ChangePasswordRoute where Self: RouterProtocol {
         let viewModel = ChangePasswordViewModel(router: router)
         let viewController = ChangePasswordViewController(viewModel: viewModel)
         
-        let transition = ModalTransition()
+        let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         
