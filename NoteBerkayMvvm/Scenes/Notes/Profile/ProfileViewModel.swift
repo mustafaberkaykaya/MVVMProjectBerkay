@@ -20,6 +20,7 @@ protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
     func pushSignOut()
     func pushChangePassword()
     func getUserRequest()
+    func updateUser(userName: String, email: String)
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
@@ -49,6 +50,18 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
             case .success(let response):
                 self.user = response.data ?? User(id: 0, userName: "", email: "")
                 self.didSuccessFetchUser?()
+            case .failure(let err):
+                self.showWarningToast?(err.localizedDescription)
+            }
+        }
+    }
+    
+    func updateUser(userName: String, email: String) {
+        dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.showSuccessToast?("Success Update")
             case .failure(let err):
                 self.showWarningToast?(err.localizedDescription)
             }

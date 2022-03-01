@@ -72,6 +72,9 @@
 "Profile.changePass" = "Change Password";
 "Profile.signOut" = "Sign Out";
 "Profile.SaveButton" = "Save";
+"Profile.name" = "Name";
+"Profile.Email" = "E-mail";
+"Profile.Error" = "Please be sure to fill in all fields.";
 
 // MARK: - ChangaPassword
 "ChangePassword.password" = "Password";

@@ -103,6 +103,12 @@ public enum L10n {
   public enum Profile {
     /// Change Password
     public static let changePass = L10n.tr("Localizable", "Profile.changePass")
+    /// E-mail
+    public static let email = L10n.tr("Localizable", "Profile.Email")
+    /// Please be sure to fill in all fields.
+    public static let error = L10n.tr("Localizable", "Profile.Error")
+    /// Name
+    public static let name = L10n.tr("Localizable", "Profile.name")
     /// Save
     public static let saveButton = L10n.tr("Localizable", "Profile.SaveButton")
     /// Sign Out

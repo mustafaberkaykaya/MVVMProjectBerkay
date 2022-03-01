@@ -93,9 +93,12 @@ extension ProfileViewController {
         signOutLabel.isUserInteractionEnabled = true
         changePasswordLabel.addGestureRecognizer(gestureRecognizerChangePassword)
         signOutLabel.addGestureRecognizer(gestureRecognizerSignOut)
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
     private func setLocalize() {
+        nameTextField.placeholder = L10n.Profile.name
+        emailTextField.placeholder = L10n.Profile.email
         changePasswordLabel.text = L10n.Profile.changePass
         signOutLabel.text = L10n.Profile.signOut
         saveButton.buttonTitle = L10n.Profile.saveButton
@@ -118,6 +121,19 @@ extension ProfileViewController {
     private func changeSignOutLabelTapped() {
         viewModel.pushSignOut()
     }
+    
+    @objc
+    private func saveButtonTapped() {
+        guard let userName = nameTextField.text,
+              let email = emailTextField.text,
+              nameTextField.text?.isEmpty == false,
+              emailTextField.text?.isEmpty == false else {
+            ToastPresenter.showWarningToast(text: L10n.Profile.error)
+                  return }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
+        viewModel.updateUser(userName: userName, email: email)
+    }
 }
 
 extension ProfileViewController {
@@ -128,7 +144,6 @@ extension ProfileViewController {
             self.emailTextField.text = self.viewModel.getUser().email
         }
     }
-    
     private func getUser() {
           self.viewModel.getUserRequest()
       }
