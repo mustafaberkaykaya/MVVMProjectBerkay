@@ -98,7 +98,7 @@ extension NotesListViewController {
         leftIcon.target = self
         leftIcon.action = nil
         rightIcon.target = self
-        rightIcon.action = nil
+        rightIcon.action = #selector(profileButtonTapped)
         tableView.register(NoteListCell.self,
                            forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
         tableView.refreshControl = refreshControl
@@ -121,6 +121,11 @@ extension NotesListViewController {
     private func pullToRefreshValueChanged() {
         viewModel.cellItems.isEmpty ? viewModel.getMyNotes() : tableView.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    @objc
+    private func profileButtonTapped() {
+        viewModel.showProfile()
     }
     
     private func subscribeViewModelEvents() {

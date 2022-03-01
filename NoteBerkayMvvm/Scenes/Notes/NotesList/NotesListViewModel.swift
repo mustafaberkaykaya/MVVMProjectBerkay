@@ -20,6 +20,7 @@ protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSourc
     func configureRow(titleText: String, descriptionText: String, noteId: Int, type: DetailVCShowType)
     func getMyNotes()
     func deleteNote(noteID: Int)
+    func showProfile()
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
@@ -69,5 +70,9 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
                 print(err.localizedDescription)
             }
         }
+    }
+    
+    func showProfile() {
+        router.pushProfile()
     }
 }
