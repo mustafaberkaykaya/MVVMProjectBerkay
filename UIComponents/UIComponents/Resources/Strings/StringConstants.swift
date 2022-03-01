@@ -29,6 +29,8 @@ public enum L10n {
     public static let saveButton = L10n.tr("Localizable", "ChangePassword.saveButton")
     /// Succes Update
     public static let succes = L10n.tr("Localizable", "ChangePassword.succes")
+    /// CHANGE PASSWORD
+    public static let title = L10n.tr("Localizable", "ChangePassword.title")
   }
 
   public enum Confirm {
@@ -117,6 +119,8 @@ public enum L10n {
     public static let saveButton = L10n.tr("Localizable", "Profile.SaveButton")
     /// Sign Out
     public static let signOut = L10n.tr("Localizable", "Profile.signOut")
+    /// PROFILE
+    public static let title = L10n.tr("Localizable", "Profile.title")
   }
 
   public enum Register {

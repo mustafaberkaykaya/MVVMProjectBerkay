@@ -102,6 +102,7 @@ extension ProfileViewController {
         changePasswordLabel.text = L10n.Profile.changePass
         signOutLabel.text = L10n.Profile.signOut
         saveButton.buttonTitle = L10n.Profile.saveButton
+        navigationItem.title = L10n.Profile.title
     }
 }
 

@@ -79,6 +79,7 @@ extension ChangePasswordViewController {
         newPasswordTextField.placeholder = L10n.ChangePassword.newPassword
         newRePasswordTextField.placeholder = L10n.ChangePassword.newrePassword
         saveButton.buttonTitle = L10n.ChangePassword.saveButton
+        navigationItem.title = L10n.ChangePassword.title
     }
 }
 

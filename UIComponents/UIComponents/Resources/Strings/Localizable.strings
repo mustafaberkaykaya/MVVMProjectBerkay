@@ -69,6 +69,7 @@
 "AddNote.save" = "Save Note";
 
 // MARK: - Profile
+"Profile.title" = "PROFILE";
 "Profile.changePass" = "Change Password";
 "Profile.signOut" = "Sign Out";
 "Profile.SaveButton" = "Save";
@@ -77,7 +78,8 @@
 "Profile.Error" = "Please be sure to fill in all fields.";
 
 
-// MARK: - ChangaPassword
+// MARK: - Change Password
+"ChangePassword.title" = "CHANGE PASSWORD";
 "ChangePassword.password" = "Password";
 "ChangePassword.newPassword" = "New Password";
 "ChangePassword.newrePassword" = "Retype New Password";
