@@ -11,8 +11,12 @@ protocol ProfileViewDataSource {}
 
 protocol ProfileViewEventSource {}
 
-protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {}
+protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
+    func showNoteList()
+}
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
-    
+    func showNoteList() {
+        router.close()
+    }
 }

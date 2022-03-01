@@ -5,4 +5,6 @@
 //  Created by Mustafa Berkay Kaya on 1.03.2022.
 //
 
-final class ProfileRouter: Router {}
+final class ProfileRouter: Router, ProfileRouter.Routes {
+    typealias Routes = LoginRoute
+}

@@ -65,10 +65,13 @@
 "NoteListTop.searchPlace" = "Search...";
 "NoteListTop.cancel" = "Cancel";
 
-
-
 // MARK: - AddNote
 "AddNote.save" = "Save Note";
+
+// MARK: - Profile
+"Profile.changePass" = "Change Password";
+"Profile.signOut" = "Sign Out";
+"Profile.SaveButton" = "Save";
 
 
 
