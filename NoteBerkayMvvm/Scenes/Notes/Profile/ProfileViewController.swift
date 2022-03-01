@@ -34,6 +34,8 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         addSubViews()
         configureContents()
         setLocalize()
+        getUser()
+        subscribeViewModelEvents()
     }
 }
 // MARK: - UILayout
@@ -116,4 +118,18 @@ extension ProfileViewController {
     private func changeSignOutLabelTapped() {
         viewModel.pushSignOut()
     }
+}
+
+extension ProfileViewController {
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccessFetchUser = { [weak self] in
+            guard let self = self else { return }
+            self.nameTextField.text = self.viewModel.getUser().fullName
+            self.emailTextField.text = self.viewModel.getUser().email
+        }
+    }
+    
+    private func getUser() {
+          self.viewModel.getUserRequest()
+      }
 }

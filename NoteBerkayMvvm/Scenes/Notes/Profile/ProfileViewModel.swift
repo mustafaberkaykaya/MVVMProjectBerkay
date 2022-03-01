@@ -7,17 +7,29 @@
 
 import Foundation
 
-protocol ProfileViewDataSource {}
+protocol ProfileViewDataSource {
+    func getUser() -> User
+}
 
-protocol ProfileViewEventSource {}
+protocol ProfileViewEventSource {
+    var didSuccessFetchUser: VoidClosure? { get set }
+}
 
 protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
     func showNoteList()
     func pushSignOut()
     func pushChangePassword()
+    func getUserRequest()
 }
 
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
+    var didSuccessFetchUser: VoidClosure?
+    var user: User = User(id: 0, userName: "", email: "")
+    
+    func getUser() -> User {
+        return user
+    }
+    
     func showNoteList() {
         router.close()
     }
@@ -28,5 +40,18 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
     
     func pushChangePassword() {
         router.presentChangePassword()
+    }
+    
+    func getUserRequest() {
+        dataProvider.request(for: GetUserRequest()) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.user = response.data ?? User(id: 0, userName: "", email: "")
+                self.didSuccessFetchUser?()
+            case .failure(let err):
+                self.showWarningToast?(err.localizedDescription)
+            }
+        }
     }
 }
