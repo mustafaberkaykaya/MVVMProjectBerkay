@@ -61,6 +61,11 @@
 "NoteList.deletefirstButton" = "Cancel";
 "NoteList.deletesecondButton" = "Delete";
 
+// MARK: - NoteListTopView
+"NoteListTop.searchPlace" = "Search...";
+"NoteListTop.cancel" = "Cancel";
+
+
 
 // MARK: - AddNote
 "AddNote.save" = "Save Note";

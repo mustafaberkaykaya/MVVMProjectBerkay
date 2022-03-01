@@ -8,12 +8,38 @@
 import TinyConstraints
 import MobilliumBuilders
 
-final class NotesListViewController: BaseViewController<NotesListViewModel> {
+final class NotesListViewController: BaseViewController<NotesListViewModel>, UISearchBarDelegate {
     
     private let tableView = UITableViewBuilder().build()
     private let addCustomButton = CustomButton()
     private let refreshControl = UIRefreshControl()
-    
+    private let profilImageView = UIImageViewBuilder()
+        .contentMode(.scaleAspectFill)
+        .masksToBounds(true)
+        .clipsToBounds(true)
+        .backgroundColor(.red)
+        .cornerRadius(15)
+        .borderWidth(2)
+        .image(.icCheck.withRenderingMode(.alwaysTemplate))
+        .build()
+    private let titleView: UIView = {
+        var view = UIView()
+        let frame = CGRect(x: 0, y: 0, width: 300, height: 44)
+        view.frame = frame
+        return view
+    }()
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.autocapitalizationType = .none
+        searchBar.backgroundImage = UIImage()
+        searchBar.becomeFirstResponder()
+        let frame = CGRect(x: 0, y: 0, width: 300, height: 44)
+        searchBar.frame = frame
+        return searchBar
+  }()
+    private let leftIcon = UIBarButtonItem()
+    private let rightIcon = UIBarButtonItem()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
@@ -28,8 +54,24 @@ final class NotesListViewController: BaseViewController<NotesListViewModel> {
 // MARK: - UILayout
 extension NotesListViewController {
     private func addSubViews() {
+        addTopBar()
         addTableView()
         addButton()
+    }
+    
+    private func addTopBar() {
+        titleView.addSubview(searchBar)
+        searchBar.becomeFirstResponder()
+        titleView.centerInSuperview()
+        navigationItem.titleView = titleView
+        
+        leftIcon.image = .icHamburger
+        leftIcon.style = .plain
+        rightIcon.image = profilImageView.image
+        rightIcon.style = .done
+        
+        navigationItem.rightBarButtonItems = [rightIcon]
+        navigationItem.leftBarButtonItems = [leftIcon]
     }
     
     private func addTableView() {
@@ -52,6 +94,11 @@ extension NotesListViewController {
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        leftIcon.target = self
+        leftIcon.action = nil
+        rightIcon.target = self
+        rightIcon.action = nil
         tableView.register(NoteListCell.self,
                            forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
         tableView.refreshControl = refreshControl
@@ -59,6 +106,7 @@ extension NotesListViewController {
     
     private func setLocalize() {
         addCustomButton.buttonTitle = L10n.NoteList.button
+        searchBar.placeholder = L10n.NoteListTop.cancel
     }
 }
 
