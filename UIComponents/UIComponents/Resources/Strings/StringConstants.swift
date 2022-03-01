@@ -16,6 +16,17 @@ public enum L10n {
     public static let save = L10n.tr("Localizable", "AddNote.save")
   }
 
+  public enum ChangePassword {
+    /// New Password
+    public static let newPassword = L10n.tr("Localizable", "ChangePassword.newPassword")
+    /// Retype New Password
+    public static let newrePassword = L10n.tr("Localizable", "ChangePassword.newrePassword")
+    /// Password
+    public static let password = L10n.tr("Localizable", "ChangePassword.password")
+    /// Save
+    public static let saveButton = L10n.tr("Localizable", "ChangePassword.saveButton")
+  }
+
   public enum Confirm {
     /// Login
     public static let button = L10n.tr("Localizable", "Confirm.button")
