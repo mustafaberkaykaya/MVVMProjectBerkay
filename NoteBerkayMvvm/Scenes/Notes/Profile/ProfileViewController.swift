@@ -144,7 +144,8 @@ extension ProfileViewController {
             self.emailTextField.text = self.viewModel.getUser().email
         }
     }
+    
     private func getUser() {
           self.viewModel.getUserRequest()
-      }
+    }
 }

@@ -76,11 +76,14 @@
 "Profile.Email" = "E-mail";
 "Profile.Error" = "Please be sure to fill in all fields.";
 
+
 // MARK: - ChangaPassword
 "ChangePassword.password" = "Password";
 "ChangePassword.newPassword" = "New Password";
 "ChangePassword.newrePassword" = "Retype New Password";
 "ChangePassword.saveButton" = "Save";
+"ChangePassword.succes" = "Succes Update";
+"ChangePassword.emptyfields" = "Please be sure to fill in all fields.";
 
 
 

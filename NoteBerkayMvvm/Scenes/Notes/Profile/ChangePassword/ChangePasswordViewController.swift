@@ -86,6 +86,21 @@ extension ChangePasswordViewController {
 extension ChangePasswordViewController {
     @objc
     private func saveButtonTapped() {
-       
+        guard let password = passwordTextField.text,
+              let newPassword = newPasswordTextField.text,
+              let retypeNewPassword = newRePasswordTextField.text,
+              passwordTextField.text?.isEmpty == false,
+              newPasswordTextField.text?.isEmpty == false,
+              newRePasswordTextField.text?.isEmpty == false else {
+            ToastPresenter.showWarningToast(text: L10n.ChangePassword.emptyfields)
+                  return }
+        let validation = Validation()
+        guard validation.isValidPassword(password) else { return }
+        guard validation.isValidPassword(newPassword) else { return }
+        guard validation.isValidPassword(retypeNewPassword) else { return }
+
+        viewModel.changePassword(password: password,
+                                 newPassword: newPassword,
+                                 retypeNewPassword: retypeNewPassword)
     }
 }

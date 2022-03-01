@@ -17,6 +17,8 @@ public enum L10n {
   }
 
   public enum ChangePassword {
+    /// Please be sure to fill in all fields.
+    public static let emptyfields = L10n.tr("Localizable", "ChangePassword.emptyfields")
     /// New Password
     public static let newPassword = L10n.tr("Localizable", "ChangePassword.newPassword")
     /// Retype New Password
@@ -25,6 +27,8 @@ public enum L10n {
     public static let password = L10n.tr("Localizable", "ChangePassword.password")
     /// Save
     public static let saveButton = L10n.tr("Localizable", "ChangePassword.saveButton")
+    /// Succes Update
+    public static let succes = L10n.tr("Localizable", "ChangePassword.succes")
   }
 
   public enum Confirm {
