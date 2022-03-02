@@ -8,7 +8,7 @@
 import TinyConstraints
 import MobilliumBuilders
 
-final class NotesListViewController: BaseViewController<NotesListViewModel>, UISearchBarDelegate {
+final class NotesListViewController: BaseViewController<NotesListViewModel> {
     
     private let tableView = UITableViewBuilder().build()
     private let addCustomButton = CustomButton()
@@ -39,6 +39,14 @@ final class NotesListViewController: BaseViewController<NotesListViewModel>, UIS
   }()
     private let leftIcon = UIBarButtonItem()
     private let rightIcon = UIBarButtonItem()
+    private var filteredItems: [NoteListCellProtocol] = []
+    private var searchText: String = ""
+       var isSearchTextEmpty: Bool {
+           return searchText.isEmpty ?? true
+       }
+       var isFiltering: Bool {
+           return !isSearchTextEmpty
+       }
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +136,12 @@ extension NotesListViewController {
         viewModel.showProfile()
     }
     
+    @objc
+    private func reloadData() {
+           viewModel.getMyNotes()
+           subscribeViewModelEvents()
+       }
+    
     private func subscribeViewModelEvents() {
          viewModel.didSuccessFetchRecipes = { [weak self] in
              guard let self = self else { return }
@@ -135,21 +149,30 @@ extension NotesListViewController {
          }
     }
     
-    @objc
-    private func reloadData() {
-           viewModel.getMyNotes()
-           subscribeViewModelEvents()
+    private func filterContentForSearchText(_ searchText: String ) {
+       filteredItems = viewModel.cellItems.filter { (item: NoteListCellProtocol) -> Bool in
+           return item.titleText.lowercased().contains(searchText.lowercased())
        }
+       tableView.reloadData()
+   }
 }
 
 extension NotesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+                 return filteredItems.count
+        }
         return viewModel.numberOfItemsAt(section: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NoteListCell = tableView.dequeueReusableCell(for: indexPath)
-        let cellItem: NoteListCellProtocol = viewModel.cellItemAt(indexPath: indexPath)
+        let cellItem: NoteListCellProtocol
+        if isFiltering {
+            cellItem = filteredItems[indexPath.row]
+        } else {
+            cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        }
         cell.setupCell(with: cellItem)
         cell.selectionStyle = .none
         return cell
@@ -212,5 +235,13 @@ extension NotesListViewController {
     func notificationCenter() {
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(reloadData), name: .reloadDataNotification, object: nil)
+    }
+}
+
+extension NotesListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterContentForSearchText(searchText)
+        self.searchText = searchText
+        self.tableView.reloadData()
     }
 }

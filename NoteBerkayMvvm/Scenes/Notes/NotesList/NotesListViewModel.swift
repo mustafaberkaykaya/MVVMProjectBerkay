@@ -24,7 +24,6 @@ protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSourc
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
-    
     var didSuccessFetchRecipes: VoidClosure?
     var cellItems: [NoteListCellProtocol] = [NoteListCellModel(title: "", description: "", noteID: 0)]
     
