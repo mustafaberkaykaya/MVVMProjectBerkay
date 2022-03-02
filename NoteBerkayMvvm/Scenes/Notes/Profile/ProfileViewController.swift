@@ -30,6 +30,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         .textAlignment(.center)
         .build()
     private let errorLabel = UILabelBuilder().build()
+    private let validator = Validator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,9 @@ extension ProfileViewController {
         changePasswordLabel.addGestureRecognizer(gestureRecognizerChangePassword)
         signOutLabel.addGestureRecognizer(gestureRecognizerSignOut)
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        
+        validator.registerField(nameTextField, errorLabel: errorLabel, rules: [RequiredRule(), FullNameRule()])
+        validator.registerField(emailTextField, errorLabel: errorLabel, rules: [RequiredRule(), EmailRule()])
     }
     
     private func setLocalize() {
@@ -127,9 +131,6 @@ extension ProfileViewController {
     
     @objc
     private func saveButtonTapped() {
-        let validator = Validator()
-        validator.registerField(nameTextField, errorLabel: errorLabel, rules: [RequiredRule(), FullNameRule()])
-        validator.registerField(emailTextField, errorLabel: errorLabel, rules: [RequiredRule(), EmailRule()])
         validator.validate(self)
     }
 }

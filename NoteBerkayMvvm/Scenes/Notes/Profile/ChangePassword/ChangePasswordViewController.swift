@@ -33,6 +33,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
     }()
     private let saveButton = CustomButton()
     private let errorLabel = UILabelBuilder().build()
+    private let validator = Validator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,8 @@ extension ChangePasswordViewController {
 extension ChangePasswordViewController {
     private func configureContents() {
         saveButton.addTarget(self, action: (#selector(saveButtonTapped)), for: .touchUpInside)
+        
+        validator.registerField(newPasswordTextField, errorLabel: errorLabel, rules: [RequiredRule(), PasswordRule()])
     }
     
     private func setLocalize() {
@@ -88,8 +91,6 @@ extension ChangePasswordViewController {
 extension ChangePasswordViewController {
     @objc
     private func saveButtonTapped() {
-        let validator = Validator()
-        validator.registerField(newPasswordTextField, errorLabel: errorLabel, rules: [RequiredRule(), PasswordRule()])
         validator.validate(self)
     }
 }
