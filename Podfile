@@ -17,6 +17,9 @@ $IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift', '~> 6.5'
 $Kingfisher = pod 'Kingfisher', '~> 6.3.1'
 $IQKeyboardManagerSwift = pod 'IQKeyboardManagerSwift’, ‘~> 6.5'
 $KeychainSwift = pod 'KeychainSwift', '~> 20.0'
+$SwiftValidator = pod 'SwiftValidator', :git => 'https://github.com/mobillium/SwiftValidator.git'
+
+
 
 
 # Pods for UI
@@ -34,11 +37,14 @@ target 'NoteBerkayMvvm' do
   project 'NoteBerkayMvvm.xcodeproj'
   
   # Pods for NoteBerkayMvvm
+
   $SwiftLint
   $MobilliumBuilders
   $TinyConstrain
   $IQKeyboardManagerSwift
   $KeychainSwift
+  $SwiftValidator
+
 
   target 'NoteBerkayMvvmTests' do
     inherit! :search_paths

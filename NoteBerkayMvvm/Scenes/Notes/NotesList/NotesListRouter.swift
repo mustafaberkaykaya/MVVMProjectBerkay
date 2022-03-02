@@ -7,5 +7,5 @@
 
 final class NotesListRouter: Router, NotesListRouter.Routes {
     
-    typealias Routes = AddNoteRoute
+    typealias Routes = AddNoteRoute & ProfileRoute
 }

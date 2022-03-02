@@ -42,6 +42,14 @@
 		6A65BA5927C6246200886636 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5627C6246200886636 /* NotesListViewController.swift */; };
 		6A65BA5A27C6246200886636 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5727C6246200886636 /* NotesListViewModel.swift */; };
 		6A65BA5C27C6248600886636 /* NotesListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65BA5B27C6248600886636 /* NotesListRoute.swift */; };
+		6A672DD627CE24D000886FC5 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DD327CE24D000886FC5 /* ProfileRouter.swift */; };
+		6A672DD727CE24D000886FC5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DD427CE24D000886FC5 /* ProfileViewController.swift */; };
+		6A672DD827CE24D000886FC5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DD527CE24D000886FC5 /* ProfileViewModel.swift */; };
+		6A672DDA27CE24E600886FC5 /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DD927CE24E600886FC5 /* ProfileRoute.swift */; };
+		6A672DDF27CE373400886FC5 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DDC27CE373400886FC5 /* ChangePasswordRouter.swift */; };
+		6A672DE027CE373400886FC5 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DDD27CE373400886FC5 /* ChangePasswordViewController.swift */; };
+		6A672DE127CE373400886FC5 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DDE27CE373400886FC5 /* ChangePasswordViewModel.swift */; };
+		6A672DE327CE374400886FC5 /* ChangePasswordRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A672DE227CE374400886FC5 /* ChangePasswordRoute.swift */; };
 		6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */; };
 		6AB6C3CC27BA8D2000286238 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */; };
 		6AB6C3CE27BA8D4400286238 /* ApiRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */; };
@@ -135,6 +143,14 @@
 		6A65BA5627C6246200886636 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		6A65BA5727C6246200886636 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
 		6A65BA5B27C6248600886636 /* NotesListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListRoute.swift; sourceTree = "<group>"; };
+		6A672DD327CE24D000886FC5 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		6A672DD427CE24D000886FC5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6A672DD527CE24D000886FC5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		6A672DD927CE24E600886FC5 /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
+		6A672DDC27CE373400886FC5 /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		6A672DDD27CE373400886FC5 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		6A672DDE27CE373400886FC5 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		6A672DE227CE374400886FC5 /* ChangePasswordRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRoute.swift; sourceTree = "<group>"; };
 		6A8606C727BD4CFD00A352BD /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		6AB6C3CB27BA8D2000286238 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		6AB6C3CD27BA8D4400286238 /* ApiRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterceptor.swift; sourceTree = "<group>"; };
@@ -360,6 +376,7 @@
 		6A65BA5327C6244400886636 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				6A672DD227CE24AB00886FC5 /* Profile */,
 				6AD00BBD27C78160008F9190 /* AddNote */,
 				6A65BA5427C6244D00886636 /* NotesList */,
 			);
@@ -375,6 +392,29 @@
 				6A65BA5B27C6248600886636 /* NotesListRoute.swift */,
 			);
 			path = NotesList;
+			sourceTree = "<group>";
+		};
+		6A672DD227CE24AB00886FC5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6A672DDB27CE371200886FC5 /* ChangePassword */,
+				6A672DD327CE24D000886FC5 /* ProfileRouter.swift */,
+				6A672DD427CE24D000886FC5 /* ProfileViewController.swift */,
+				6A672DD527CE24D000886FC5 /* ProfileViewModel.swift */,
+				6A672DD927CE24E600886FC5 /* ProfileRoute.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6A672DDB27CE371200886FC5 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				6A672DDC27CE373400886FC5 /* ChangePasswordRouter.swift */,
+				6A672DDD27CE373400886FC5 /* ChangePasswordViewController.swift */,
+				6A672DDE27CE373400886FC5 /* ChangePasswordViewModel.swift */,
+				6A672DE227CE374400886FC5 /* ChangePasswordRoute.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		6AB6C3CA27BA8CF300286238 /* DataProvider */ = {
@@ -769,14 +809,18 @@
 				6AF09C0227BF83F400EFF17E /* RegisterViewController.swift in Sources */,
 				6A23F8FE27B52FC30082079E /* Animator.swift in Sources */,
 				6A60AB8A27C3703A00889B83 /* AppDelegate+IQKeyboardManager.swift in Sources */,
+				6A672DDF27CE373400886FC5 /* ChangePasswordRouter.swift in Sources */,
 				6AD00BC527C7822A008F9190 /* AddNoteRoute.swift in Sources */,
 				6A65BA5C27C6248600886636 /* NotesListRoute.swift in Sources */,
 				6A4C480E27C4FCD400845F66 /* ForgotPasswordConfirmRoute.swift in Sources */,
 				6A4C480C27C4FC8200845F66 /* ForgotPasswordConfirmViewModel.swift in Sources */,
 				6A65BA5A27C6246200886636 /* NotesListViewModel.swift in Sources */,
 				6A8606C827BD4CFD00A352BD /* MainNavigationController.swift in Sources */,
+				6A672DDA27CE24E600886FC5 /* ProfileRoute.swift in Sources */,
 				6AD00BC327C78217008F9190 /* AddNoteViewModel.swift in Sources */,
+				6A672DE327CE374400886FC5 /* ChangePasswordRoute.swift in Sources */,
 				6A4C47F227C3D7DB00845F66 /* Validation.swift in Sources */,
+				6A672DE127CE373400886FC5 /* ChangePasswordViewModel.swift in Sources */,
 				6A23F91727B5403A0082079E /* PlaceOnWindowTransition.swift in Sources */,
 				6A23F91127B535540082079E /* BaseViewModel.swift in Sources */,
 				6A23F91F27B540E20082079E /* LoginViewModel.swift in Sources */,
@@ -786,17 +830,21 @@
 				6A23F91027B535540082079E /* BaseViewController.swift in Sources */,
 				6AF09C0527BF840E00EFF17E /* RegisterRoute.swift in Sources */,
 				6A23F91227B535540082079E /* BaseRouter.swift in Sources */,
+				6A672DD627CE24D000886FC5 /* ProfileRouter.swift in Sources */,
 				6A23F92327B5454C0082079E /* AppRouter.swift in Sources */,
 				6AD00BDA27C7F29C008F9190 /* Notification+Extension.swift in Sources */,
 				6A65BA5927C6246200886636 /* NotesListViewController.swift in Sources */,
 				6A23F90A27B532B00082079E /* Transition.swift in Sources */,
 				6A4C47F827C4CE0C00845F66 /* ForgotPasswordViewController.swift in Sources */,
+				6A672DD827CE24D000886FC5 /* ProfileViewModel.swift in Sources */,
 				6A4C47F927C4CE0C00845F66 /* ForgotPasswordViewModel.swift in Sources */,
 				6A23F91D27B540E20082079E /* LoginRouter.swift in Sources */,
 				6AD00BC227C78217008F9190 /* AddNoteViewController.swift in Sources */,
 				6A4C480A27C4FC8200845F66 /* ForgotPasswordConfirmRouter.swift in Sources */,
+				6A672DD727CE24D000886FC5 /* ProfileViewController.swift in Sources */,
 				6A4C47F727C4CE0C00845F66 /* ForgotPasswordRouter.swift in Sources */,
 				6ABF3E5527B3FED50014D355 /* AppDelegate.swift in Sources */,
+				6A672DE027CE373400886FC5 /* ChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,7 +931,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -938,7 +986,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

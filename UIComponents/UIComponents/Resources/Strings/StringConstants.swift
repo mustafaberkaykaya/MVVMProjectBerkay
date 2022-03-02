@@ -16,6 +16,25 @@ public enum L10n {
     public static let save = L10n.tr("Localizable", "AddNote.save")
   }
 
+  public enum ChangePassword {
+    /// Please be sure to fill in all fields.
+    public static let emptyfields = L10n.tr("Localizable", "ChangePassword.emptyfields")
+    /// Please make sure the passwords are the same
+    public static let matchPassword = L10n.tr("Localizable", "ChangePassword.matchPassword")
+    /// New Password
+    public static let newPassword = L10n.tr("Localizable", "ChangePassword.newPassword")
+    /// Retype New Password
+    public static let newrePassword = L10n.tr("Localizable", "ChangePassword.newrePassword")
+    /// Password
+    public static let password = L10n.tr("Localizable", "ChangePassword.password")
+    /// Save
+    public static let saveButton = L10n.tr("Localizable", "ChangePassword.saveButton")
+    /// Succes Update
+    public static let succes = L10n.tr("Localizable", "ChangePassword.succes")
+    /// CHANGE PASSWORD
+    public static let title = L10n.tr("Localizable", "ChangePassword.title")
+  }
+
   public enum Confirm {
     /// Login
     public static let button = L10n.tr("Localizable", "Confirm.button")
@@ -87,6 +106,23 @@ public enum L10n {
     public static let cancel = L10n.tr("Localizable", "NoteListTop.cancel")
     /// Search...
     public static let searchPlace = L10n.tr("Localizable", "NoteListTop.searchPlace")
+  }
+
+  public enum Profile {
+    /// Change Password
+    public static let changePass = L10n.tr("Localizable", "Profile.changePass")
+    /// E-mail
+    public static let email = L10n.tr("Localizable", "Profile.Email")
+    /// Please be sure to fill in all fields.
+    public static let error = L10n.tr("Localizable", "Profile.Error")
+    /// Name
+    public static let name = L10n.tr("Localizable", "Profile.name")
+    /// Save
+    public static let saveButton = L10n.tr("Localizable", "Profile.SaveButton")
+    /// Sign Out
+    public static let signOut = L10n.tr("Localizable", "Profile.signOut")
+    /// PROFILE
+    public static let title = L10n.tr("Localizable", "Profile.title")
   }
 
   public enum Register {
