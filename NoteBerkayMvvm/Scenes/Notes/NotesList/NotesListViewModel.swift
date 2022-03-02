@@ -10,6 +10,7 @@ import Foundation
 protocol NotesListViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> NoteListCellProtocol
+    var page: Int { get set }
 }
 
 protocol NotesListViewEventSource {
@@ -24,6 +25,10 @@ protocol NotesListViewProtocol: NotesListViewDataSource, NotesListViewEventSourc
 }
 
 final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewProtocol {
+    var page = 1
+    var isPagingEnabled = false
+    var isRequestEnabled = false
+    
     var didSuccessFetchRecipes: VoidClosure?
     var cellItems: [NoteListCellProtocol] = [NoteListCellModel(title: "", description: "", noteID: 0)]
     
@@ -44,13 +49,19 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
     }
     
     func getMyNotes() {
-        dataProvider.request(for: GetMyNotesRequest()) { [weak self] (result) in
+        self.isRequestEnabled = false
+        dataProvider.request(for: GetMyNotesRequest(page: page)) { [weak self] (result) in
+            self?.isRequestEnabled = true
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                self.cellItems.removeAll(keepingCapacity: false)
-                let cellItems = response.data.data.map({ NoteListCellModel(title: $0.title ?? "", description: $0.note ?? "", noteID: $0.id ?? 0)})
+                if self.page == 1 {
+                    self.cellItems.removeAll(keepingCapacity: false)
+                }
+                let cellItems = response.data.data.map({ NoteListCellModel(title: $0.title ?? "", description: $0.note ?? "", noteID: $0.id ?? 0) })
                 self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.data.currentPage < response.data.lastPage
                 self.didSuccessFetchRecipes?()
             case .failure(let err):
                 print(err.localizedDescription)
@@ -61,10 +72,11 @@ final class NotesListViewModel: BaseViewModel<NotesListRouter>, NotesListViewPro
     func deleteNote(noteID: Int) {
         dataProvider.request(for: NoteDeleteRequest(noteId: noteID)) { [weak self] (result) in
             guard let self = self else { return }
+            self.isRequestEnabled = true
             switch result {
             case .success:
+                self.page = 1
                 self.getMyNotes()
-                self.didSuccessFetchRecipes?()
             case .failure(let err):
                 print(err.localizedDescription)
             }

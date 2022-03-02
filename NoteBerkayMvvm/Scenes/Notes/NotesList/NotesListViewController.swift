@@ -93,6 +93,16 @@ extension NotesListViewController {
         addCustomButton.centerXToSuperview()
         addCustomButton.height(42)
     }
+    
+    private func createSpinnerFooter() -> UIView {
+         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
+         let spinner = UIActivityIndicatorView()
+         spinner.center = footerView.center
+         footerView.addSubview(spinner)
+         spinner.startAnimating()
+         
+         return footerView
+     }
 }
 
 // MARK: - Configure & Set Localize
@@ -138,16 +148,20 @@ extension NotesListViewController {
     
     @objc
     private func reloadData() {
-           viewModel.getMyNotes()
-           subscribeViewModelEvents()
-       }
+        viewModel.page = 1
+        viewModel.cellItems.removeAll(keepingCapacity: false)
+        viewModel.getMyNotes()
+    }
     
     private func subscribeViewModelEvents() {
          viewModel.didSuccessFetchRecipes = { [weak self] in
              guard let self = self else { return }
+             DispatchQueue.main.async {
+                self.tableView.tableFooterView = nil
+             }
              self.tableView.reloadData()
-         }
     }
+}
     
     private func filterContentForSearchText(_ searchText: String ) {
        filteredItems = viewModel.cellItems.filter { (item: NoteListCellProtocol) -> Bool in
@@ -200,7 +214,8 @@ extension NotesListViewController: UITableViewDelegate {
                                             firstButtonHandler: { _ in },
                                             secondButtonHandler: { _ in
         self.swipeDeleteAction(indexPath: indexPath) }, delegate: self )
-        completionHandler(true) }
+            completionHandler(true)
+        }
 
         deleteAct.image = .icTrash
         deleteAct.backgroundColor = .appRed
@@ -228,6 +243,15 @@ extension NotesListViewController: UITableViewDelegate {
         let description = self.viewModel.cellItems[indexPath.row].descriptionText
         let noteID = self.viewModel.cellItems[indexPath.row].noteID
         self.viewModel.configureRow(titleText: title, descriptionText: description, noteId: noteID, type: .update)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+
+        if position > tableView.contentSize.height - 100 - scrollView.frame.size.height && viewModel.isPagingEnabled && viewModel.isRequestEnabled {
+            self.tableView.tableFooterView = createSpinnerFooter()
+            viewModel.getMyNotes()
+        }
     }
 }
 
