@@ -19,6 +19,8 @@ public enum L10n {
   public enum ChangePassword {
     /// Please be sure to fill in all fields.
     public static let emptyfields = L10n.tr("Localizable", "ChangePassword.emptyfields")
+    /// Please make sure the passwords are the same
+    public static let matchPassword = L10n.tr("Localizable", "ChangePassword.matchPassword")
     /// New Password
     public static let newPassword = L10n.tr("Localizable", "ChangePassword.newPassword")
     /// Retype New Password

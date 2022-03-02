@@ -86,6 +86,7 @@
 "ChangePassword.saveButton" = "Save";
 "ChangePassword.succes" = "Succes Update";
 "ChangePassword.emptyfields" = "Please be sure to fill in all fields.";
+"ChangePassword.matchPassword" = "Please make sure the passwords are the same";
 
 
 

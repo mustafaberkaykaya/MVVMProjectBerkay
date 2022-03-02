@@ -7,6 +7,7 @@
 
 import UIKit
 import MobilliumBuilders
+import SwiftValidator
 
 final class ChangePasswordViewController: BaseViewController<ChangePasswordViewModel> {
     
@@ -31,6 +32,7 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
            return textField
     }()
     private let saveButton = CustomButton()
+    private let errorLabel = UILabelBuilder().build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ final class ChangePasswordViewController: BaseViewController<ChangePasswordViewM
         setLocalize()
     }
 }
-
 // MARK: - UILayout
 extension ChangePasswordViewController {
     private func addSubViews() {
@@ -87,21 +88,24 @@ extension ChangePasswordViewController {
 extension ChangePasswordViewController {
     @objc
     private func saveButtonTapped() {
-        guard let password = passwordTextField.text,
-              let newPassword = newPasswordTextField.text,
-              let retypeNewPassword = newRePasswordTextField.text,
-              passwordTextField.text?.isEmpty == false,
-              newPasswordTextField.text?.isEmpty == false,
-              newRePasswordTextField.text?.isEmpty == false else {
-            ToastPresenter.showWarningToast(text: L10n.ChangePassword.emptyfields)
-                  return }
-        let validation = Validation()
-        guard validation.isValidPassword(password) else { return }
-        guard validation.isValidPassword(newPassword) else { return }
-        guard validation.isValidPassword(retypeNewPassword) else { return }
+        let validator = Validator()
+        validator.registerField(newPasswordTextField, errorLabel: errorLabel, rules: [RequiredRule(), PasswordRule()])
+        validator.validate(self)
+    }
+}
 
-        viewModel.changePassword(password: password,
-                                 newPassword: newPassword,
-                                 retypeNewPassword: retypeNewPassword)
+extension ChangePasswordViewController: ValidationDelegate {
+    func validationSuccessful() {
+        if newPasswordTextField.text == newRePasswordTextField.text {
+            viewModel.changePassword(password: passwordTextField.text!,
+                                     newPassword: newPasswordTextField.text!,
+                                     retypeNewPassword: newRePasswordTextField.text!)
+        } else {
+            ToastPresenter.showWarningToast(text: L10n.ChangePassword.matchPassword)
+        }
+    }
+    
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        ToastPresenter.showWarningToast(text: (errors[0].1.errorMessage))
     }
 }
