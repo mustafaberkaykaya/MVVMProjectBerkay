@@ -7,7 +7,7 @@
 
 import UIKit
 import MobilliumBuilders
-
+import SwiftValidator
 
 final class ProfileViewController: BaseViewController<ProfileViewModel> {
     
@@ -29,6 +29,7 @@ final class ProfileViewController: BaseViewController<ProfileViewModel> {
         .textColor(.appRed)
         .textAlignment(.center)
         .build()
+    private let errorLabel = UILabelBuilder().build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,15 +127,10 @@ extension ProfileViewController {
     
     @objc
     private func saveButtonTapped() {
-        guard let userName = nameTextField.text,
-              let email = emailTextField.text,
-              nameTextField.text?.isEmpty == false,
-              emailTextField.text?.isEmpty == false else {
-            ToastPresenter.showWarningToast(text: L10n.Profile.error)
-                  return }
-        let validation = Validation()
-        guard validation.isValidEmail(email) else { return }
-        viewModel.updateUser(userName: userName, email: email)
+        let validator = Validator()
+        validator.registerField(nameTextField, errorLabel: errorLabel, rules: [RequiredRule(), FullNameRule()])
+        validator.registerField(emailTextField, errorLabel: errorLabel, rules: [RequiredRule(), EmailRule()])
+        validator.validate(self)
     }
 }
 
@@ -149,5 +145,15 @@ extension ProfileViewController {
     
     private func getUser() {
           self.viewModel.getUserRequest()
+    }
+}
+
+extension ProfileViewController: ValidationDelegate {
+    func validationSuccessful() {
+        viewModel.updateUser(userName: nameTextField.text!, email: emailTextField.text!)
+    }
+    
+    func validationFailed(_ errors: [(Validatable, ValidationError)]) {
+        ToastPresenter.showWarningToast(text: (errors[0].1.errorMessage))
     }
 }
