@@ -121,6 +121,8 @@ public enum L10n {
     public static let saveButton = L10n.tr("Localizable", "Profile.SaveButton")
     /// Sign Out
     public static let signOut = L10n.tr("Localizable", "Profile.signOut")
+    /// Succes Update!
+    public static let succes = L10n.tr("Localizable", "Profile.Succes")
     /// PROFILE
     public static let title = L10n.tr("Localizable", "Profile.title")
   }
