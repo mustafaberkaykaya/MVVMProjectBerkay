@@ -75,7 +75,11 @@ extension ChangePasswordViewController {
     private func configureContents() {
         saveButton.addTarget(self, action: (#selector(saveButtonTapped)), for: .touchUpInside)
         
-        validator.registerField(newPasswordTextField, errorLabel: errorLabel, rules: [RequiredRule(), PasswordRule()])
+        validator.registerField(newPasswordTextField,
+                                errorLabel: errorLabel,
+                                rules: [RequiredRule(),
+                                        PasswordRule(),
+                                        ConfirmationRule(confirmField: newRePasswordTextField)])
     }
     
     private func setLocalize() {
@@ -97,13 +101,9 @@ extension ChangePasswordViewController {
 
 extension ChangePasswordViewController: ValidationDelegate {
     func validationSuccessful() {
-        if newPasswordTextField.text == newRePasswordTextField.text {
-            viewModel.changePassword(password: passwordTextField.text!,
-                                     newPassword: newPasswordTextField.text!,
-                                     retypeNewPassword: newRePasswordTextField.text!)
-        } else {
-            ToastPresenter.showWarningToast(text: L10n.ChangePassword.matchPassword)
-        }
+        viewModel.changePassword(password: passwordTextField.text!,
+                                 newPassword: newPasswordTextField.text!,
+                                 retypeNewPassword: newRePasswordTextField.text!)
     }
     
     func validationFailed(_ errors: [(Validatable, ValidationError)]) {
