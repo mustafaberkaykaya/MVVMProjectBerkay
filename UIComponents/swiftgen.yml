@@ -7,7 +7,7 @@ fonts:
         publicAccess: public
 
 strings:
-  inputs: UIComponents/Resources/Strings
+  inputs: UIComponents/Resources/Strings/en.lproj
   filter: .+\.strings$
   outputs:
     - templateName: structured-swift5

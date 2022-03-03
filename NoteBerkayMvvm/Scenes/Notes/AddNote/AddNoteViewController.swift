@@ -19,7 +19,6 @@ final class AddNoteViewController: BaseViewController<AddNoteViewModel> {
     private let titleTextField = UITextFieldBuilder()
         .font(.font(.josefinSansSemiBold, size: 22))
         .textColor(.appEbonyClay)
-        .placeholder("Note Title")
         .build()
     private let descriptionTextView = UITextViewBuilder()
         .font(.font(.josefinSansRegular, size: 13))
@@ -86,6 +85,7 @@ extension AddNoteViewController {
     
     private func setLocalize() {
         saveNoteButton.buttonTitle = L10n.AddNote.save
+        titleTextField.placeholder = L10n.AddNote.title
         switch viewModel.type {
         case .add:
             descriptionTextView.text = L10n.AddNote.description
