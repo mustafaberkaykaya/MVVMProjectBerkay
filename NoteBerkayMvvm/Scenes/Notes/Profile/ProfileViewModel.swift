@@ -60,8 +60,8 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
         dataProvider.request(for: UpdateUserRequest(userName: userName, email: email)) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                self.showSuccessToast?("Success Update")
+            case .success:
+                self.showSuccessToast?(L10n.Profile.succes)
             case .failure(let err):
                 self.showWarningToast?(err.localizedDescription)
             }

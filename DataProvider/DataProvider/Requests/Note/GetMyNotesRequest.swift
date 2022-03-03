@@ -14,6 +14,8 @@ public struct GetMyNotesRequest: ApiDecodableResponseRequest {
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
     
-    public init() {}
+    public init(page: Int) {
+        parameters["page"] = page
+    }
     
 }

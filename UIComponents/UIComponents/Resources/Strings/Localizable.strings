@@ -76,6 +76,7 @@
 "Profile.name" = "Name";
 "Profile.Email" = "E-mail";
 "Profile.Error" = "Please be sure to fill in all fields.";
+"Profile.Succes" = "Succes Update!";
 
 
 // MARK: - Change Password
