@@ -67,6 +67,7 @@
 
 // MARK: - AddNote
 "AddNote.save" = "Save Note";
+"AddNote.description" = "Description";
 
 // MARK: - Profile
 "Profile.title" = "PROFILE";
