@@ -6,5 +6,5 @@
 //
 
 final class RegisterRouter: Router, RegisterRouter.Routes {
-    typealias Routes = ForgotPasswordRoute
+    typealias Routes = ForgotPasswordRoute & LoginRoute
 }

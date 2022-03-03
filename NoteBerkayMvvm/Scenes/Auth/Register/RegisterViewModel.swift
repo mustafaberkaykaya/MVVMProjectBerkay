@@ -31,7 +31,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
     }
     
     func pushLoginScene() {
-        print("Push login scene")
+        router.placeOnWindowLogin()
     }
     
     func sendRegisterRequest(username: String, email: String, password: String) {
@@ -43,6 +43,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
             case .success(let response):
                 self.keychain.set(response.data?.accessToken ?? "", forKey: Keychain.token)
                 self.showSuccessToast?(L10n.Register.succes)
+                self.pushLoginScene()
             case .failure(let err):
                 self.showWarningToast?(L10n.Register.failed)
                 print(err.localizedDescription)
