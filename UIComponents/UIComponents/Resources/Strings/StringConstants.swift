@@ -12,8 +12,12 @@ import Foundation
 public enum L10n {
 
   public enum AddNote {
+    /// Description
+    public static let description = L10n.tr("Localizable", "AddNote.description")
     /// Save Note
     public static let save = L10n.tr("Localizable", "AddNote.save")
+    /// Note Title
+    public static let title = L10n.tr("Localizable", "AddNote.title")
   }
 
   public enum ChangePassword {

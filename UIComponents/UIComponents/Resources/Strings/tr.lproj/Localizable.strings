@@ -1,0 +1,101 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by Mustafa Berkay Kaya on 11.02.2022.
+  
+*/
+// MARK: - Login
+"Login.title" = "Giriş";
+"Login.description" = "Uygulamamızı kullanmaya devam etmek için giriş yapın veya kaydolun.";
+"Login.placeholderMail" = "E-mail adresi";
+"Login.placeholderPass" = "Şifre";
+"Login.forgot" = "Şifreni mi unuttun?";
+"Login.footerLeft" = "Yeni Kullanıcı?";
+"Login.footerRight" = "Şimdi Kayıt Ol";
+"Login.emailandpasswordError" = "E-mail adres ve şifre alanları boş bırakılamaz";
+"Login.emailError" = "E-mail adresi boş bırakılamaz.";
+"Login.passwordError" = "Şifre boş bırakılamaz";
+"Login.succes" = "Başarılı Giriş";
+"Login.failed" = "Girdiğiniz e-posta ve şifre kayıtlarımızla eşleşmedi. Lütfen tekrar deneyin.";
+
+
+// MARK: - Register
+"Register.title" = "Kayıt Ol";
+"Register.description" = "Uygulamamızı kullanmaya devam etmek için giriş yapın veya kaydolun.";
+"Register.fullName" = "Ad";
+"Register.email" = "E-mail adresi";
+"Register.password" = "Şifre";
+"Register.forgot" = "Şifreni mi unuttun?";
+"Register.already" = "Zaten bir hesabınız var mı? ";
+"Register.signIn" = "Şimdi giriş yap";
+"Register.email_password_usernameError" = "Bütün alanların doldurulduğundan emin olunuz";
+"Register.emailError" = "E-mail adresi boş bırakılamaz";
+"Register.passwordError" = "Şifre boş bırakılamaz";
+"Register.usernameError" = "Adınız boş bırakılamaz";
+"Register.succes" = "Başarılı Kayıt";
+"Register.failed" = "Hatalı Kayıt";
+
+// MARK: - Validation
+"Validation.email" = "Geçerli bir e-mail adresi giriniz";
+"Validation.password" = "Şifreniz en az 6 karakterden oluşmalıdır.";
+"Validation.text" = "Bütün alanları doldurduğundan emin olunuz";
+
+// MARK: - ForgotPassword
+"Forgot.title" = "Şifreni mi Unuttun?";
+"Forgot.description" = "Lütfen e-mailinizi kontrol ediniz. Gerekli talimatları göndereceğiz";
+"Forgot.email" = "E-mail adresi";
+"Forgot.button" = "Şifreyi Yenile";
+"Forgot.failed" = "Lütfen geçerli bir e-mail adresi giriniz";
+"Forgot.succes" = "Başarılı";
+
+// MARK: - ForgotPasswordConfirm
+"Confirm.title" = "Şifre Sıfırlama Onayı";
+"Confirm.description" = "%@ adresine daha fazla talimat içeren bir e-posta gönderildi";
+"Confirm.button" = "Giriş Yap";
+
+// MARK: - NoteList
+"NoteList.button" = "Not Ekle";
+"NoteList.deleteTitle1" = "Not Sil";
+"NoteList.deleteMessage1" = "Bu notu silmek istediğinden eminmisin ?";
+"NoteList.deletefirstButton" = "Vazgeç";
+"NoteList.deletesecondButton" = "Sil";
+
+// MARK: - NoteListTopView
+"NoteListTop.searchPlace" = "Ara...";
+"NoteListTop.cancel" = "Vazgeç";
+
+// MARK: - AddNote
+"AddNote.save" = "Notu Kaydet";
+"AddNote.description" = "Açıklama";
+"AddNote.title" = "Başlık";
+
+// MARK: - Profile
+"Profile.title" = "Profil";
+"Profile.changePass" = "Şifreyi Değiştir";
+"Profile.signOut" = "Çıkış Yap";
+"Profile.SaveButton" = "Kaydet";
+"Profile.name" = "Ad";
+"Profile.Email" = "E-mail";
+"Profile.Error" = "Lütfen bütün alanların doğru olduğundan emin olunuz.";
+"Profile.Succes" = "Başarılı Güncelleme!";
+
+
+// MARK: - Change Password
+"ChangePassword.title" = "ŞİFREYİ DEĞİŞTİR";
+"ChangePassword.password" = "Şifre";
+"ChangePassword.newPassword" = "Yeni Şifre";
+"ChangePassword.newrePassword" = "Yeni Şifreyi Tekrar Yazınız";
+"ChangePassword.saveButton" = "Kaydet";
+"ChangePassword.succes" = "Başarılı Güncelleme";
+"ChangePassword.emptyfields" = "Bütün alanların dolu olduğundan emin olunuz";
+"ChangePassword.matchPassword" = "Şifrelerin aynı olduğundan emin olunuz.";
+
+
+
+
+
+
+
+
+

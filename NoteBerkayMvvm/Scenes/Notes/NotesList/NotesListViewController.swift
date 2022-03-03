@@ -92,6 +92,11 @@ extension NotesListViewController {
         addCustomButton.bottomToSuperview(usingSafeArea: true).constant = -77
         addCustomButton.centerXToSuperview()
         addCustomButton.height(42)
+        addCustomButton.titleLabel?.font = .font(.josefinSansSemiBold, size: 13)
+        addCustomButton.setImage(.icAdd.withRenderingMode(.alwaysTemplate), for: .normal)
+        addCustomButton.contentEdgeInsets = .init(top: 13, left: 12, bottom: 13, right: 12)
+        addCustomButton.titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+        addCustomButton.imageEdgeInsets = .init(top: 0, left: -12, bottom: 0, right: 0)
     }
     
     private func createSpinnerFooter() -> UIView {
@@ -120,7 +125,7 @@ extension NotesListViewController {
         tableView.register(NoteListCell.self,
                            forCellReuseIdentifier: NoteListCell.defaultReuseIdentifier)
         tableView.refreshControl = refreshControl
-}
+    }
     
     private func setLocalize() {
         addCustomButton.buttonTitle = L10n.NoteList.button

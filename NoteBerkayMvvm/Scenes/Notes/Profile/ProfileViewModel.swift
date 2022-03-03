@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 protocol ProfileViewDataSource {
     func getUser() -> User
@@ -26,6 +27,7 @@ protocol ProfileViewProtocol: ProfileViewDataSource, ProfileViewEventSource {
 final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol {
     var didSuccessFetchUser: VoidClosure?
     var user: User = User(id: 0, userName: "", email: "")
+    var keychain = KeychainSwift()
     
     func getUser() -> User {
         return user
@@ -36,6 +38,7 @@ final class ProfileViewModel: BaseViewModel<ProfileRouter>, ProfileViewProtocol 
     }
     
     func pushSignOut() {
+        keychain.clear()
         router.placeOnWindowLogin()
     }
     

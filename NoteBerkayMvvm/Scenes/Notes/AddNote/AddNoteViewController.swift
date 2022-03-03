@@ -16,8 +16,15 @@ final class AddNoteViewController: BaseViewController<AddNoteViewModel> {
         .axis(.vertical)
         .distribution(.fill)
         .build()
-    private let titleTextField = AuthTextField()
-    private let descriptionTextView = UITextViewBuilder().build()
+    private let titleTextField = UITextFieldBuilder()
+        .font(.font(.josefinSansSemiBold, size: 22))
+        .textColor(.appEbonyClay)
+        .build()
+    private let descriptionTextView = UITextViewBuilder()
+        .font(.font(.josefinSansRegular, size: 13))
+        .textColor(.appDarkGray)
+        .textAlignment(.left)
+        .build()
     private let saveNoteButton = CustomButton()
 
     override func viewDidLoad() {
@@ -39,6 +46,7 @@ extension AddNoteViewController {
             titleTextField.isEnabled = false
         case .add:
             addSaveNoteButton()
+            descriptionTextView.textColor = .lightGray
         case .update:
             addSaveNoteButton()
         }
@@ -52,20 +60,19 @@ extension AddNoteViewController {
         mainStackView.bottomToSuperview(usingSafeArea: true)
     }
     
-    private func addSaveNoteButton() {
-        view.addSubview(saveNoteButton)
-        saveNoteButton.centerXToSuperview()
-        saveNoteButton.bottomToSuperview(usingSafeArea: true).constant = -77
-        saveNoteButton.height(42)
-    }
-    
     private func addTitleNote() {
         mainStackView.addArrangedSubview(titleTextField)
     }
     
     private func addDescriptionTextView() {
         mainStackView.addArrangedSubview(descriptionTextView)
-        descriptionTextView.backgroundColor = .green
+    }
+    
+    private func addSaveNoteButton() {
+        view.addSubview(saveNoteButton)
+        saveNoteButton.centerXToSuperview()
+        saveNoteButton.bottomToSuperview(usingSafeArea: true).constant = -77
+        saveNoteButton.height(42)
     }
 }
 
@@ -73,12 +80,19 @@ extension AddNoteViewController {
 extension AddNoteViewController {
     private func configureContents() {
         saveNoteButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        descriptionTextView.delegate = self
     }
     
     private func setLocalize() {
         saveNoteButton.buttonTitle = L10n.AddNote.save
-        titleTextField.text = viewModel.titleText
-        descriptionTextView.text = viewModel.descriptionText
+        titleTextField.placeholder = L10n.AddNote.title
+        switch viewModel.type {
+        case .add:
+            descriptionTextView.text = L10n.AddNote.description
+        default:
+            titleTextField.text = viewModel.titleText
+            descriptionTextView.text = viewModel.descriptionText
+        }
     }
 }
 
@@ -95,6 +109,33 @@ extension AddNoteViewController {
             viewModel.addNote(title: title, description: description)
         } else if viewModel.type == .update {
             viewModel.updateNote(title: title, description: description, noteID: viewModel.noteId)
+        }
+    }
+}
+
+extension AddNoteViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if  textView.textColor == .lightGray {
+            textView.text = ""
+            textView.textColor = .appEbonyClay
+        } else {
+            descriptionTextView.text = textView.text
+        }
+        
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+                textView.text = "descriptionText"
+                textView.textColor = UIColor.lightGray
+        }
+    }
+        
+    func textViewDidChange(_ textView: UITextView) {
+        descriptionTextView.text = textView.text
+            if textView.text.isEmpty {
+                   textView.text = "descriptionText"
+                   textView.textColor = UIColor.lightGray
+            }
         }
     }
 }
